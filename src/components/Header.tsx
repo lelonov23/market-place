@@ -12,7 +12,10 @@ function Header() {
           </LinkContainer>
           <Nav className="me-auto">
             <LinkContainer to="/">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/cart">
+              <Nav.Link>Cart</Nav.Link>
             </LinkContainer>
           </Nav>
         </Container>
