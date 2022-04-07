@@ -1,18 +1,29 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import {
+  InputGroup,
+  FormControl,
+  Container,
+  Button,
+  Row,
+  Col,
+} from "react-bootstrap";
+
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <header className={styles.header}>
+      <Container className="align-center" fluid="md">
+        <Row>
+          <Col className="text-center " sm={2}>
+            <Button variant="primary">Каталог</Button>
+          </Col>
+          <Col className="text-center " sm={8}></Col>
+          <Col className="text-center " sm={2}>
+            <i className="fa-solid fa-cart-shopping"></i>
+          </Col>
+        </Row>
+      </Container>
     </header>
   );
 };

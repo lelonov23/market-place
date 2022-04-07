@@ -1,0 +1,5 @@
+.header {
+  background-color: rgb(73, 139, 215);
+  padding: 0.7rem 0;
+  display: flex;
+}

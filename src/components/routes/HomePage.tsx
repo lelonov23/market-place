@@ -8,14 +8,14 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = observer(({ categoryStore }) => {
-  console.log("stoer--- ", categoryStore.categories);
   return (
     <div>
+      <h1>Home Page</h1>
       <ul>
         {categoryStore.categories.map((category) => {
           return (
-            <li>
-              <p>{category.name}</p>
+            <li key={category.id}>
+              <h2>{category.name}</h2>
             </li>
           );
         })}
