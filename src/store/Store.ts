@@ -3,7 +3,7 @@ import { makeObservable, observable, action, computed } from "mobx";
 export interface Category {
   id: number;
   name: string;
-  subcategories: number[];
+  categoryId: number | null;
 }
 
 export interface Product {
@@ -24,6 +24,7 @@ export class StoreImpl {
       setCategories: action,
       setProducts: action,
       mainCategories: computed,
+      subcategories: computed,
     });
   }
 
@@ -36,9 +37,11 @@ export class StoreImpl {
   }
 
   get mainCategories() {
-    return this.categories.filter(
-      (cat) => cat.subcategories && cat.subcategories.length > 0
-    );
+    return this.categories.filter((cat) => cat.categoryId === null);
+  }
+
+  get subcategories() {
+    return this.categories.filter((cat) => cat.categoryId !== null);
   }
 }
 

@@ -8,6 +8,7 @@ import { Store } from "./store/Store";
 
 import Header from "./components/layout/Header";
 import HomePage from "./components/routes/HomePage";
+import SubcategoryList from "./components/SubcategoryList";
 
 import categories from "./content.json";
 import products from "./items.json";
@@ -26,6 +27,7 @@ const App: React.FC = observer(() => {
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/category/:categoryId" element={<SubcategoryList />} />
         </Routes>
       </Container>
     </div>
