@@ -4,27 +4,25 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { observer } from "mobx-react";
 
-import { CategoryStoreImpl } from "./CategoryStore";
+import { Store } from "./Store";
 
 import Header from "./components/layout/Header";
 import HomePage from "./components/routes/HomePage";
 
 import categories from "./content.json";
+import products from "./items.json";
 
-interface AppProps {
-  categoryStore: CategoryStoreImpl;
-}
-
-const App: React.FC<AppProps> = observer(({ categoryStore }) => {
+const App: React.FC = observer(() => {
   React.useEffect(() => {
-    categoryStore.setCategories(categories);
+    Store.setCategories(categories);
+    Store.setProducts(products);
   }, []);
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage categoryStore={categoryStore} />} />
+        <Route path="/" element={<HomePage />} />
       </Routes>
     </div>
   );

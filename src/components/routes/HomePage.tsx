@@ -1,21 +1,18 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { CategoryStoreImpl } from "../../CategoryStore";
+import { Store } from "../../Store";
+import CategoryItem from "../CategoryItem";
 
-interface HomePageProps {
-  categoryStore: CategoryStoreImpl;
-}
-
-const HomePage: React.FC<HomePageProps> = observer(({ categoryStore }) => {
+const HomePage: React.FC = observer(() => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>Популярные категории</h1>
       <ul>
-        {categoryStore.categories.map((category) => {
+        {Store.mainCategories.map((category) => {
           return (
             <li key={category.id}>
-              <h2>{category.name}</h2>
+              <CategoryItem category={category} />
             </li>
           );
         })}
