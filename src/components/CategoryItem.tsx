@@ -1,7 +1,6 @@
 import React from "react";
-import { Category } from "../Store";
+import { Category } from "../store/Store";
 import { observer } from "mobx-react";
-import { StoreImpl, Store } from "../Store";
 
 interface CategoryItemProps {
   category: Category;

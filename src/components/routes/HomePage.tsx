@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { Store } from "../../Store";
+import { Store } from "../../store/Store";
 import CategoryItem from "../CategoryItem";
 
 const HomePage: React.FC = observer(() => {

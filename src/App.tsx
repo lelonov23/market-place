@@ -4,7 +4,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { observer } from "mobx-react";
 
-import { Store } from "./Store";
+import { Store } from "./store/Store";
 
 import Header from "./components/layout/Header";
 import HomePage from "./components/routes/HomePage";
