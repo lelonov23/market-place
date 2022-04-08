@@ -12,6 +12,8 @@ import HomePage from "./components/routes/HomePage";
 import categories from "./content.json";
 import products from "./items.json";
 
+import { Container } from "react-bootstrap";
+
 const App: React.FC = observer(() => {
   React.useEffect(() => {
     Store.setCategories(categories);
@@ -21,9 +23,11 @@ const App: React.FC = observer(() => {
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Container>
     </div>
   );
 });

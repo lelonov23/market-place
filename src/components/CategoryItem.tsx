@@ -1,6 +1,8 @@
 import React from "react";
 import { Category } from "../store/Store";
 import { observer } from "mobx-react";
+import { Card } from "react-bootstrap";
+import styles from "./CategoryItem.module.css";
 
 interface CategoryItemProps {
   category: Category;
@@ -8,11 +10,9 @@ interface CategoryItemProps {
 
 const CategoryItem: React.FC<CategoryItemProps> = observer(({ category }) => {
   return (
-    <div>
-      <button>
-        <h2>{category.name}</h2>
-      </button>
-    </div>
+    <Card className={styles.category}>
+      <h2>{category.name}</h2>
+    </Card>
   );
 });
 

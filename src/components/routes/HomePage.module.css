@@ -1,0 +1,12 @@
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.categoryItem {
+  margin: 1rem;
+}
