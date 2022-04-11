@@ -13,7 +13,7 @@ interface CategoryItemProps {
 const CategoryItem: React.FC<CategoryItemProps> = observer(({ category }) => {
   return (
     <Card className={styles.category}>
-      <h2>{category.name}</h2>
+      <h2 className={styles.categoryName}>{category.name}</h2>
     </Card>
   );
 });
