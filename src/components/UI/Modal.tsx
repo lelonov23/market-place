@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = observer(
     if (!isOpen) return null;
 
     return (
-      <Portal wrapperId="catalog-container">
+      <Portal wrapperId="modal-container">
         <div onClick={handleClose} className={styles.modal}>
           <div
             onClick={(e) => e.stopPropagation()}

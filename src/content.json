@@ -31,32 +31,32 @@
   },
   {
     "id": 21,
-    "name": "Subcategory 1",
+    "name": "Subcategory 4",
     "categoryId": 2
   },
   {
     "id": 22,
-    "name": "Subcategory 2",
+    "name": "Subcategory 5",
     "categoryId": 2
   },
   {
     "id": 23,
-    "name": "Subcategory 3",
+    "name": "Subcategory 6",
     "categoryId": 2
   },
   {
     "id": 31,
-    "name": "Subcategory 1",
+    "name": "Subcategory 7",
     "categoryId": 3
   },
   {
     "id": 32,
-    "name": "Subcategory 2",
+    "name": "Subcategory 8",
     "categoryId": 3
   },
   {
     "id": 33,
-    "name": "Subcategory 3",
+    "name": "Subcategory 9",
     "categoryId": 3
   }
 ]
