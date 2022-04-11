@@ -1,0 +1,58 @@
+.tabs {
+  display: flex;
+}
+
+.catList,
+.subcatList {
+  width: 50%;
+  height: 100vh;
+}
+
+.catList {
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.subcatList {
+  padding-left: 3rem;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.categoryLink {
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+}
+
+.categoryLink:hover {
+  color: rgb(42, 129, 206);
+}
+
+.categoryLink:active {
+  color: rgb(21, 63, 100);
+}
+
+.active {
+  color: rgb(36, 110, 175);
+}
+
+.subcatHeading {
+  font-weight: bold;
+}
+
+.cats {
+  margin-top: 2rem;
+}
+
+.subcats {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subcats > * {
+  padding-right: 3rem;
+}

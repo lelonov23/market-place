@@ -1,62 +1,77 @@
 [
   {
     "id": 1,
-    "name": "Category 1",
+    "name": "Смартфоны и гаджеты",
     "categoryId": null
   },
   {
     "id": 2,
-    "name": "Category 2",
+    "name": "Ноутбуки и компьютеры",
     "categoryId": null
   },
   {
     "id": 3,
-    "name": "Category 3",
+    "name": "Телевизоры, аудио-видео, фото",
     "categoryId": null
   },
   {
     "id": 11,
-    "name": "Subcategory 1",
+    "name": "Смартфоны",
     "categoryId": 1
   },
   {
     "id": 12,
-    "name": "Subcategory 2",
+    "name": "Планшеты",
     "categoryId": 1
   },
   {
     "id": 13,
-    "name": "Subcategory 3",
+    "name": "Гаджеты",
     "categoryId": 1
   },
   {
     "id": 21,
-    "name": "Subcategory 4",
+    "name": "Ноутбуки",
     "categoryId": 2
   },
   {
     "id": 22,
-    "name": "Subcategory 5",
+    "name": "Компьютеры и моноблоки",
     "categoryId": 2
   },
   {
     "id": 23,
-    "name": "Subcategory 6",
+    "name": "Комплектующие для ПК",
     "categoryId": 2
   },
   {
     "id": 31,
-    "name": "Subcategory 7",
+    "name": "Телевизоры",
     "categoryId": 3
   },
   {
     "id": 32,
-    "name": "Subcategory 8",
+    "name": "Наушники",
     "categoryId": 3
   },
   {
     "id": 33,
-    "name": "Subcategory 9",
+    "name": "Видеотехника",
     "categoryId": 3
+  },
+  {
+    "id": 100,
+    "name": "Subcategory 7",
+    "categoryId": 11
+  },
+  {
+    "id": 101,
+    "name": "Subcategory 8",
+    "categoryId": 11
+  },
+  {
+    "id": 102,
+    "name": "Subcategory 9",
+    "categoryId": 11
   }
 ]
