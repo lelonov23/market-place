@@ -1,0 +1,17 @@
+.product {
+  margin-bottom: 1rem;
+}
+
+.content {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.list {
+  width: 70%;
+}
+
+.count {
+  color: rgb(165, 165, 165);
+  font-weight: 400;
+}

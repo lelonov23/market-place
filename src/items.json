@@ -2,17 +2,20 @@
   {
     "id": 1,
     "name": "Item 1",
-    "categoryId": 11
+    "categoryId": 11,
+    "img": "/img/phone.jpg"
   },
   {
     "id": 2,
     "name": "Item 2",
-    "categoryId": 11
+    "categoryId": 11,
+    "img": "/img/phone.jpg"
   },
   {
     "id": 3,
     "name": "Item 3",
-    "categoryId": 11
+    "categoryId": 11,
+    "img": "/img/phone.jpg"
   },
   {
     "id": 4,

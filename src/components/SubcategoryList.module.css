@@ -1,0 +1,8 @@
+.list {
+  margin: 3rem 0 0 1rem;
+  display: flex;
+}
+
+.subcat {
+  margin-right: 1rem;
+}

@@ -37,7 +37,10 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                     : styles.categoryLink
                 }
               >
-                <p>{category.name}</p>
+                <p>
+                  {category.name}
+                  {activeCategory === category.id ? ` >` : ""}
+                </p>
               </li>
             );
           })}
@@ -55,7 +58,11 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
         <ul>
           {Store.mainCategories.map((category) => {
             return (
-              <CategoryContent activeCategory={activeCategory} id={category.id}>
+              <CategoryContent
+                key={category.id}
+                activeCategory={activeCategory}
+                id={category.id}
+              >
                 <ul className={styles.subcats}>
                   {Store.subcategories
                     .filter((subcat) => subcat.categoryId === category?.id)
@@ -75,7 +82,7 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                               .filter((cat) => cat.categoryId === subcat.id)
                               .map((cat) => {
                                 return (
-                                  <li>
+                                  <li key={cat.id}>
                                     <p>{cat.name}</p>
                                   </li>
                                 );

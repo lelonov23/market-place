@@ -1,4 +1,4 @@
-.category {
+.category h2 {
   padding: 1rem;
 }
 
@@ -13,4 +13,14 @@
 
 a {
   text-decoration: none;
+}
+
+.category img {
+  width: 15rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.category {
+  width: calc(15rem + 2px);
 }
