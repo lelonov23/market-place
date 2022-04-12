@@ -4,6 +4,7 @@ export interface Category {
   id: number;
   name: string;
   categoryId: number | null;
+  img?: string;
 }
 
 export interface Product {
@@ -11,6 +12,7 @@ export interface Product {
   name: string;
   categoryId: number;
   orders?: number;
+  img?: string;
 }
 
 export class StoreImpl {

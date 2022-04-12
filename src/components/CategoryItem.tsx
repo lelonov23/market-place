@@ -13,6 +13,7 @@ interface CategoryItemProps {
 const CategoryItem: React.FC<CategoryItemProps> = observer(({ category }) => {
   return (
     <Card className={styles.category}>
+      <img src={category.img} />
       <h2 className={styles.categoryName}>{category.name}</h2>
     </Card>
   );

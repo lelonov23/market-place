@@ -1,10 +1,12 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import { Store } from "../store/Store";
 
 import CategoryItem from "./CategoryItem";
+
+import styles from "./SubcategoryList.module.css";
 
 const SubcategoryList: React.FC = observer(() => {
   const { categoryId } = useParams();
@@ -14,13 +16,15 @@ const SubcategoryList: React.FC = observer(() => {
       return (
         <section>
           <h1>{category.name}</h1>
-          <ul>
+          <ul className={styles.list}>
             {Store.subcategories
               .filter((subcat) => subcat.categoryId === category?.id)
               .map((subcat) => {
                 return (
-                  <li key={subcat.id}>
-                    <CategoryItem category={subcat} />
+                  <li className={styles.subcat} key={subcat.id}>
+                    <Link to={`/products/${subcat.id}`}>
+                      <CategoryItem category={subcat} />
+                    </Link>
                   </li>
                 );
               })}

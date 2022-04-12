@@ -4,29 +4,40 @@ import { useParams } from "react-router-dom";
 
 import { Store } from "../store/Store";
 
-import ProductIrem from "./ProductItem";
+import ProductItem from "./ProductItem";
 
-// interface ProductListProps {}
+import styles from "./ProductList.module.css";
 
 const ProductList: React.FC = observer(() => {
   const { categoryId } = useParams();
-  if (categoryId)
+
+  if (categoryId) {
+    const products = Store.products.filter(
+      (product) => product.categoryId === +categoryId
+    );
+
+    const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
     return (
       <section>
-        <ul>
-          {Store.products
-            .filter((product) => product.categoryId === +categoryId)
-            .map((product) => {
+        <h1>
+          {subcategory?.name}{" "}
+          <span className={styles.count}>{products.length} товаров</span>
+        </h1>
+        <div className={styles.content}>
+          <ul className={styles.list}>
+            {products.map((product) => {
               return (
-                <li key={product.id}>
-                  <p>{product.name}</p>
+                <li className={styles.product} key={product.id}>
+                  <ProductItem product={product} />
                 </li>
               );
             })}
-        </ul>
+          </ul>
+          <div>filters placeholder</div>
+        </div>
       </section>
     );
-  else return null;
+  } else return null;
 });
 
 export default ProductList;

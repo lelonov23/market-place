@@ -17,7 +17,8 @@
   {
     "id": 11,
     "name": "Смартфоны",
-    "categoryId": 1
+    "categoryId": 1,
+    "img": "/img/phone-cat.jpg"
   },
   {
     "id": 12,

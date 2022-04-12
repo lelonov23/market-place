@@ -41,6 +41,11 @@ ul {
 
 .subcatHeading {
   font-weight: bold;
+  color: rgb(47, 47, 47);
+}
+
+.subcatHeading:hover {
+  color: rgb(42, 129, 206);
 }
 
 .cats {
