@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
 
 import Modal from "../UI/Modal";
-import Catalog from "../../catalog/Catalog";
+import Catalog from "../catalog/Catalog";
 
 import styles from "./Header.module.css";
 
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
       </Container>
 
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
-        <Catalog />
+        <Catalog handleClose={() => setIsOpen(false)} />
       </Modal>
     </header>
   );

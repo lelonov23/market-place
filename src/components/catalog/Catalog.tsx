@@ -1,12 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 
-import { Store } from "../store/Store";
+import { Store } from "../../store/Store";
 
 import CategoryContent from "./CategoryContent";
 
 import styles from "./Catalog.module.css";
 
-const Catalog: React.FC = () => {
+interface CatalogProps {
+  handleClose: () => void;
+}
+
+const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
   const [activeCategory, setActiveCategory] = React.useState<number | null>(
     null
   );
@@ -56,7 +62,14 @@ const Catalog: React.FC = () => {
                     .map((subcat) => {
                       return (
                         <li key={subcat.id}>
-                          <p className={styles.subcatHeading}>{subcat.name}</p>
+                          <Link
+                            onClick={handleClose}
+                            to={`/products/${subcat.id}`}
+                          >
+                            <p className={styles.subcatHeading}>
+                              {subcat.name}
+                            </p>
+                          </Link>
                           <ul>
                             {Store.subcategories
                               .filter((cat) => cat.categoryId === subcat.id)
@@ -79,6 +92,6 @@ const Catalog: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Catalog;
