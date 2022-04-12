@@ -9,6 +9,7 @@ import { Store } from "./store/Store";
 import Header from "./components/layout/Header";
 import HomePage from "./components/routes/HomePage";
 import SubcategoryList from "./components/SubcategoryList";
+import ProductList from "./components/ProductList";
 
 import categories from "./content.json";
 import products from "./items.json";
@@ -28,6 +29,7 @@ const App: React.FC = observer(() => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/category/:categoryId" element={<SubcategoryList />} />
+          <Route path="/products/:categoryId" element={<ProductList />} />
         </Routes>
       </Container>
     </div>

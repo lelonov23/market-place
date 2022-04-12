@@ -3,10 +3,14 @@
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 2rem;
 }
 
 .categoryItem {
   margin: 1rem;
+  max-width: 20rem;
+}
+
+.categoryItem:hover {
 }

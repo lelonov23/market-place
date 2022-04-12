@@ -1,0 +1,28 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 20px 20px;
+}
+
+.modal-content {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+  background-color: #f1f6ff;
+  color: rgb(47, 47, 47);
+}
+
+@media (max-width: 1660px) {
+  .modal-content {
+    width: 60%;
+  }
+}

@@ -9,7 +9,7 @@ import CategoryItem from "./CategoryItem";
 const SubcategoryList: React.FC = observer(() => {
   const { categoryId } = useParams();
   if (categoryId) {
-    let category = Store.categories.find((cat) => cat.id === +categoryId);
+    const category = Store.categories.find((cat) => cat.id === +categoryId);
     if (category) {
       return (
         <section>
