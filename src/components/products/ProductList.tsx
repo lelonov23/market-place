@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "react-router-dom";
 
-import { Store } from "../store/Store";
+import { Store } from "../../store/Store";
 
 import ProductItem from "./ProductItem";
 
