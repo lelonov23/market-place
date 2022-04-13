@@ -13,11 +13,13 @@ export interface Product {
   categoryId: number;
   orders?: number;
   img?: string;
+  cost?: number;
 }
 
 export class StoreImpl {
   categories: Category[] = [];
   products: Product[] = [];
+  params: any[] = [];
 
   constructor() {
     makeObservable(this, {
@@ -25,6 +27,7 @@ export class StoreImpl {
       products: observable,
       setCategories: action,
       setProducts: action,
+      setParams: action,
       mainCategories: computed,
       subcategories: computed,
     });
@@ -36,6 +39,10 @@ export class StoreImpl {
 
   setProducts(products: Product[]) {
     this.products = products;
+  }
+
+  setParams(params: any[]) {
+    this.params = params;
   }
 
   get mainCategories() {

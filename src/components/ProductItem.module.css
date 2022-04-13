@@ -8,3 +8,7 @@
   height: 15rem;
   object-fit: cover;
 }
+
+.desc {
+  padding: 1rem 0 0 1rem;
+}

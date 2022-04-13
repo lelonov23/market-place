@@ -13,6 +13,7 @@ import ProductList from "./components/ProductList";
 
 import categories from "./content.json";
 import products from "./items.json";
+import params from "./params.json";
 
 import { Container } from "react-bootstrap";
 
@@ -20,6 +21,7 @@ const App: React.FC = observer(() => {
   React.useEffect(() => {
     Store.setCategories(categories);
     Store.setProducts(products);
+    Store.setParams(params);
   }, []);
 
   return (

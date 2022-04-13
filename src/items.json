@@ -1,21 +1,24 @@
 [
   {
     "id": 1,
-    "name": "Item 1",
+    "name": "Samsung Galaxy S20",
     "categoryId": 11,
-    "img": "/img/phone.jpg"
+    "img": "/img/phone.jpg",
+    "cost": 3300
   },
   {
     "id": 2,
-    "name": "Item 2",
+    "name": "Apple iPhone 13",
     "categoryId": 11,
-    "img": "/img/phone.jpg"
+    "img": "/img/phone.jpg",
+    "cost": 3300
   },
   {
     "id": 3,
-    "name": "Item 3",
+    "name": "Xiaomi 11X",
     "categoryId": 11,
-    "img": "/img/phone.jpg"
+    "img": "/img/phone.jpg",
+    "cost": 3300
   },
   {
     "id": 4,
