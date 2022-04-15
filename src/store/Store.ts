@@ -13,7 +13,7 @@ export interface Product {
   categoryId: number;
   orders?: number;
   img?: string;
-  cost?: number;
+  cost: number;
 }
 
 export class StoreImpl {

@@ -17,6 +17,16 @@ import params from "./params.json";
 
 import { Container } from "react-bootstrap";
 
+type ContextType = {
+  cartIsOpen: boolean;
+  setCartIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Context = React.createContext<ContextType>({
+  cartIsOpen: false,
+  setCartIsOpen: () => {},
+});
+
 const App: React.FC = observer(() => {
   React.useEffect(() => {
     Store.setCategories(categories);
@@ -24,16 +34,25 @@ const App: React.FC = observer(() => {
     Store.setParams(params);
   }, []);
 
+  const [cartIsOpen, setCartIsOpen] = React.useState<boolean>(false);
+
   return (
     <div className="App">
-      <Header />
-      <Container>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/category/:categoryId" element={<SubcategoryList />} />
-          <Route path="/products/:categoryId" element={<ProductList />} />
-        </Routes>
-      </Container>
+      <Context.Provider
+        value={{
+          cartIsOpen,
+          setCartIsOpen,
+        }}
+      >
+        <Header />
+        <Container>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/category/:categoryId" element={<SubcategoryList />} />
+            <Route path="/products/:categoryId" element={<ProductList />} />
+          </Routes>
+        </Container>
+      </Context.Provider>
     </div>
   );
 });
