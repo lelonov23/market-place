@@ -12,13 +12,13 @@
 
 .modal-content {
   width: 50%;
-  height: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   padding: 3rem;
   background-color: #f1f6ff;
   color: rgb(47, 47, 47);
+  border-radius: 0.3rem;
+  position: relative;
 }
 
 @media (max-width: 1660px) {

@@ -5,24 +5,61 @@ export interface Product {
   name: string;
   categoryId: number;
   orders?: number;
+  cost: number;
+}
+
+export interface CartItem {
+  id: string;
+  product: Product;
+  count: number;
 }
 
 export class CartStoreImpl {
-  items: Product[] = [];
+  items: CartItem[] = [];
 
   constructor() {
     makeObservable(this, {
       items: observable,
-      addItem: action,
+      addNewItem: action,
+      addExistingItem: action,
+      removeExistingItem: action,
+      removeAllOfItem: action,
+      totalPrice: computed,
     });
   }
 
-  addItem(item: Product) {
-    this.items.push(item);
+  addNewItem(item: Product) {
+    const newItem = {
+      id: new Date().toISOString(),
+      product: item,
+      count: 1,
+    };
+    this.items.push(newItem);
   }
 
-  removeItem(id: number) {
-    this.items = this.items.filter((item) => item.id !== id);
+  addExistingItem(item: Product) {
+    const foundItem = this.items.find((i) => i.product.id === item.id);
+    if (foundItem) foundItem.count++;
+  }
+
+  removeExistingItem(item: Product) {
+    const foundItem = this.items.find((i) => i.product.id === item.id);
+    if (foundItem) foundItem.count--;
+    if (foundItem?.count === 0) {
+      this.removeAllOfItem(item);
+    }
+  }
+
+  removeAllOfItem(item: Product) {
+    this.items = this.items.filter(
+      (foundItem) => foundItem.product.id !== item.id
+    );
+  }
+
+  get totalPrice() {
+    return this.items
+      .map((item) => item.product.cost * item.count)
+      .reduce((sum, num) => sum + num, 0);
   }
 }
 export const CartStore = new CartStoreImpl();

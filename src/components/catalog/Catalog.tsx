@@ -30,7 +30,7 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
             return (
               <li
                 key={category.id}
-                onClick={() => handleOpenCategory(category.id)}
+                onMouseEnter={() => handleOpenCategory(category.id)}
                 className={
                   activeCategory === category.id
                     ? `${styles.active} ${styles.categoryLink}`

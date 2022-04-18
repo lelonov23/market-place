@@ -1,16 +1,16 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import Portal from "./Portal";
+import Portal from "../UI/Portal";
 
-import styles from "./Modal.module.css";
+import styles from "./CartModal.module.css";
 
-interface ModalProps {
+interface CartModalProps {
   isOpen: boolean;
   handleClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = observer(
+const CartModal: React.FC<CartModalProps> = observer(
   ({ children, isOpen, handleClose }) => {
     if (!isOpen) return null;
 
@@ -31,4 +31,5 @@ const Modal: React.FC<ModalProps> = observer(
     );
   }
 );
-export default Modal;
+
+export default CartModal;

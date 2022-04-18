@@ -3,12 +3,16 @@ import { Container, Button, Row, Col } from "react-bootstrap";
 
 import Modal from "../UI/Modal";
 import Catalog from "../catalog/Catalog";
+import CartModal from "../cart/CartModal";
 
 import styles from "./Header.module.css";
+import Cart from "../cart/Cart";
+import { observer } from "mobx-react";
+import { Context } from "../../App";
 
-const Header: React.FC = () => {
+const Header: React.FC = observer(() => {
   const [isOpen, setIsOpen] = React.useState(false);
-
+  const { cartIsOpen, setCartIsOpen } = React.useContext(Context);
   return (
     <header className={styles.header}>
       <Container className="align-center" fluid="md">
@@ -20,7 +24,9 @@ const Header: React.FC = () => {
           </Col>
           <Col className="text-center " sm={8}></Col>
           <Col className="text-center " sm={2}>
-            <i className="fa-solid fa-cart-shopping"></i>
+            <Button onClick={() => setCartIsOpen(true)} variant="primary">
+              <i className="fa-solid fa-cart-shopping"></i>
+            </Button>
           </Col>
         </Row>
       </Container>
@@ -28,8 +34,11 @@ const Header: React.FC = () => {
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
         <Catalog handleClose={() => setIsOpen(false)} />
       </Modal>
+      <CartModal handleClose={() => setCartIsOpen(false)} isOpen={cartIsOpen}>
+        <Cart />
+      </CartModal>
     </header>
   );
-};
+});
 
 export default Header;
