@@ -16,10 +16,18 @@ export interface Product {
   cost: number;
 }
 
+export interface Param {
+  productId: number;
+  type: string;
+  display?: string;
+  os?: string;
+  battery: string;
+}
+
 export class StoreImpl {
   categories: Category[] = [];
   products: Product[] = [];
-  params: any[] = [];
+  params: Param[] = [];
 
   constructor() {
     makeObservable(this, {

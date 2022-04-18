@@ -7,6 +7,7 @@ import { Store } from "../../store/Store";
 import ProductItem from "./ProductItem";
 
 import styles from "./ProductList.module.css";
+import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
   const { categoryId } = useParams();
@@ -33,7 +34,7 @@ const ProductList: React.FC = observer(() => {
               );
             })}
           </ul>
-          <div>filters placeholder</div>
+          <Filter></Filter>
         </div>
       </section>
     );

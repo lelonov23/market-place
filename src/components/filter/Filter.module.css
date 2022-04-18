@@ -1,0 +1,11 @@
+.filter {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: calc(30% - 2rem);
+  margin-left: 1rem;
+  border-radius: 3px;
+  height: max-content;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
