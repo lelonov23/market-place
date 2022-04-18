@@ -26,3 +26,12 @@
     width: 60%;
   }
 }
+
+.close {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+}

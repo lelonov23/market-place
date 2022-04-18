@@ -22,6 +22,9 @@ const CartModal: React.FC<CartModalProps> = observer(
             className={styles["modal-content"]}
           >
             {children}
+            <button className={styles.close} onClick={handleClose}>
+              <i className="fa-solid fa-xmark"></i>
+            </button>
           </div>
         </div>
       </Portal>

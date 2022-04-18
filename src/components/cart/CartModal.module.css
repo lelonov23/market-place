@@ -18,10 +18,20 @@
   background-color: #f1f6ff;
   color: rgb(47, 47, 47);
   border-radius: 0.3rem;
+  position: relative;
 }
 
 @media (max-width: 1660px) {
   .modal-content {
     width: 60%;
   }
+}
+
+.close {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
 }
