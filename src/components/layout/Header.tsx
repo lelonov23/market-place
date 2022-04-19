@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import Modal from "../UI/Modal";
 import Catalog from "../catalog/Catalog";
@@ -25,7 +27,7 @@ const Header: React.FC = observer(() => {
           <Col className="text-center " sm={8}></Col>
           <Col className="text-center " sm={2}>
             <Button onClick={() => setCartIsOpen(true)} variant="primary">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <FontAwesomeIcon icon={faCartShopping} />
             </Button>
           </Col>
         </Row>

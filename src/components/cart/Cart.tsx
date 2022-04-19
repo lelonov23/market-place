@@ -2,6 +2,8 @@ import { observer } from "mobx-react";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { CartStore, Product } from "../../store/CartStore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Cart.module.css";
 
@@ -31,17 +33,17 @@ const Cart: React.FC = observer(() => {
                   <h3>{item.product.name}</h3>
                   <div className={styles.countControl}>
                     <Button onClick={() => removeItemHandler(item.product)}>
-                      <i className="fa-solid fa-minus"></i>
+                      <FontAwesomeIcon icon={faMinus} />
                     </Button>
                     <span>{item.count}</span>
                     <Button onClick={() => addItemHandler(item.product)}>
-                      <i className="fa-solid fa-plus"></i>
+                      <FontAwesomeIcon icon={faPlus} />
                     </Button>
                     <Button
                       onClick={() => removeAllOfItemHandler(item.product)}
                       className={styles.delete}
                     >
-                      <i className="fa-solid fa-trash-can"></i>
+                      <FontAwesomeIcon icon={faTrashCan} />
                     </Button>
                   </div>
                 </li>
