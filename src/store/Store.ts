@@ -28,14 +28,17 @@ export class StoreImpl {
   categories: Category[] = [];
   products: Product[] = [];
   params: Param[] = [];
+  filterOptions: any[] = [];
 
   constructor() {
     makeObservable(this, {
       categories: observable,
       products: observable,
+      filterOptions: observable,
       setCategories: action,
       setProducts: action,
       setParams: action,
+      setFilterOptions: action,
       mainCategories: computed,
       subcategories: computed,
     });
@@ -49,8 +52,12 @@ export class StoreImpl {
     this.products = products;
   }
 
-  setParams(params: any[]) {
+  setParams(params: Param[]) {
     this.params = params;
+  }
+
+  setFilterOptions(opts: any[]) {
+    this.filterOptions = opts;
   }
 
   get mainCategories() {

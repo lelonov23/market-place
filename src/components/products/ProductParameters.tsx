@@ -13,7 +13,6 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
   ({ product }) => {
     const params = Store.params.find((param) => param.productId === product.id);
     if (params) {
-      // const keys = Object.keys(params).filter((key) => key !== "productId");
       if (params.type === "phone")
         return (
           <section className={styles.paramList}>

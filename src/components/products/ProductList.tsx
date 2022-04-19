@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "react-router-dom";
 
-import { Store } from "../../store/Store";
+import { Store, Param } from "../../store/Store";
 
 import ProductItem from "./ProductItem";
 
@@ -17,12 +17,19 @@ const ProductList: React.FC = observer(() => {
       (product) => product.categoryId === +categoryId
     );
 
+    const params = products.map((prod) => {
+      const param = Store.params.find((param) => param.productId === prod.id);
+      if (param) return param;
+    });
+
+    const opts = {};
+
     const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
     return (
       <section>
         <h1>
-          {subcategory?.name}{" "}
-          <span className={styles.count}>{products.length} товаров</span>
+          {subcategory?.name}
+          <span className={styles.count}> {products.length} товаров</span>
         </h1>
         <div className={styles.content}>
           <ul className={styles.list}>
