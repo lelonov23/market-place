@@ -16,3 +16,13 @@
   color: rgb(165, 165, 165);
   font-weight: 400;
 }
+
+@media (max-width: 1200px) {
+  .list {
+    width: calc(100% - 1rem);
+  
+  }
+  .content {
+    flex-direction: column;
+  }
+}

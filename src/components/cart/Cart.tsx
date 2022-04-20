@@ -19,12 +19,17 @@ const removeAllOfItemHandler = (product: Product) => {
   CartStore.removeAllOfItem(product);
 };
 
+const orderHandler = () => {
+  CartStore.confirmOrder();
+};
+
 const Cart: React.FC = observer(() => {
   const items = CartStore.items;
-  if (items.length)
-    return (
-      <div>
-        <h2>Корзина</h2>
+  // if (items.length)
+  return (
+    <div>
+      <h2>Корзина</h2>
+      {items.length > 0 && (
         <ul>
           {items &&
             items.map((item) => {
@@ -50,16 +55,16 @@ const Cart: React.FC = observer(() => {
               );
             })}
         </ul>
-        <h2>Итого: {CartStore.totalPrice}</h2>
-      </div>
-    );
-  else
-    return (
-      <div>
-        <h2>Корзина</h2>
-        <p>Корзина пока пуста.</p>
-      </div>
-    );
+      )}
+      {items.length > 0 && (
+        <div className={styles.orderControl}>
+          <h2>Итого: {CartStore.totalPrice}</h2>
+          <Button onClick={orderHandler}>Сделать заказ</Button>
+        </div>
+      )}
+      {items.length == 0 && <p>Корзина пока пуста.</p>}
+    </div>
+  );
 });
 
 export default Cart;

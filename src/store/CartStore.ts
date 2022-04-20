@@ -14,8 +14,15 @@ export interface CartItem {
   count: number;
 }
 
+export interface Order {
+  id: string | number;
+  items: CartItem[];
+  date: Date;
+}
+
 export class CartStoreImpl {
   items: CartItem[] = [];
+  orders: Order[] = [];
 
   constructor() {
     makeObservable(this, {
@@ -54,6 +61,18 @@ export class CartStoreImpl {
     this.items = this.items.filter(
       (foundItem) => foundItem.product.id !== item.id
     );
+  }
+
+  confirmOrder() {
+    const newOrder: Order = {
+      id: new Date().toISOString(),
+      items: [...this.items],
+      date: new Date(),
+    };
+
+    this.orders = [...this.orders, newOrder];
+
+    this.items = [];
   }
 
   get totalPrice() {
