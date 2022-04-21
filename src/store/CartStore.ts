@@ -31,6 +31,7 @@ export class CartStoreImpl {
       addExistingItem: action,
       removeExistingItem: action,
       removeAllOfItem: action,
+      confirmOrder: action,
       totalPrice: computed,
     });
   }

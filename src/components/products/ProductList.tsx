@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "react-router-dom";
 
-import { Store, Param } from "../../store/Store";
+import { Store, Product } from "../../store/Store";
 
 import ProductItem from "./ProductItem";
 
@@ -11,18 +11,15 @@ import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
   const { categoryId } = useParams();
+  const [products, setProducts] = React.useState<Product[]>([]);
 
   if (categoryId) {
-    const products = Store.products.filter(
-      (product) => product.categoryId === +categoryId
-    );
-
-    const params = products.map((prod) => {
-      const param = Store.params.find((param) => param.productId === prod.id);
-      if (param) return param;
-    });
-
-    const opts = {};
+    React.useEffect(() => {
+      const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
+      console.log(type);
+      if (type) Store.filterProducts(type);
+      setProducts(Store.currentProducts);
+    }, [categoryId]);
 
     const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
     return (

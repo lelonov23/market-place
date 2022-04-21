@@ -13,18 +13,18 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
   ({ product }) => {
     const params = Store.params.find((param) => param.productId === product.id);
     if (params) {
-      if (params.type === "phone")
-        return (
-          <section className={styles.paramList}>
-            <h2>Параметры</h2>
-            <ul>
-              <li>{"Дисплей: " + params.display}</li>
+      return (
+        <section className={styles.paramList}>
+          <h2>Параметры</h2>
+          <ul>
+            {params.type === "phone" && <li>{"Дисплей: " + params.display}</li>}
+            {params.type === "phone" && (
               <li>{"Операционная система: " + params.os}</li>
-              <li>{"Батарея: " + params.battery}</li>
-            </ul>
-          </section>
-        );
-      else return null;
+            )}
+            {params.type === "phone" && <li>{"Батарея: " + params.battery}</li>}
+          </ul>
+        </section>
+      );
     } else return null;
   }
 );
