@@ -17,11 +17,22 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
         <section className={styles.paramList}>
           <h2>Параметры</h2>
           <ul>
-            {params.type === "phone" && <li>{"Дисплей: " + params.display}</li>}
             {params.type === "phone" && (
               <li>{"Операционная система: " + params.os}</li>
             )}
             {params.type === "phone" && <li>{"Батарея: " + params.battery}</li>}
+            {params.type === "phone" && (
+              <li>{"Разрешение экрана: " + params.resolution}</li>
+            )}
+            {params.type === "tablet" && (
+              <li>{"Дисплей: " + params.display}</li>
+            )}
+            {params.type === "tablet" && (
+              <li>{"Процессор: " + params.processor}</li>
+            )}
+            {params.type === "tablet" && (
+              <li>{"Батарея: " + params.battery}</li>
+            )}
           </ul>
         </section>
       );

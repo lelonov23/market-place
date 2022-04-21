@@ -46,11 +46,11 @@
   },
   {
     "id": 6,
-    "name": "Item 6",
+    "name": "Samsung Galaxy Tab S8",
     "categoryId": 12,
     "img": "/img/phone.jpg",
     "type": "tablet",
-    "cost": 3300,
+    "cost": 78990,
     "orders": 0
   },
   {
@@ -139,7 +139,7 @@
     "name": "Item 16",
     "categoryId": 23,
     "img": "/img/phone.jpg",
-    "type": "pc-micsellaneous",
+    "type": "pc-miscellaneous",
     "cost": 3300,
     "orders": 0
   },
@@ -148,7 +148,7 @@
     "name": "Item 17",
     "categoryId": 23,
     "img": "/img/phone.jpg",
-    "type": "pc-micsellaneous",
+    "type": "pc-miscellaneous",
     "cost": 3300,
     "orders": 0
   },
@@ -157,7 +157,7 @@
     "name": "Item 18",
     "categoryId": 23,
     "img": "/img/phone.jpg",
-    "type": "pc-micsellaneous",
+    "type": "pc-miscellaneous",
     "cost": 3300,
     "orders": 0
   },

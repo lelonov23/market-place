@@ -15,6 +15,8 @@ const ProductList: React.FC = observer(() => {
   const products = Store.currentProducts;
 
   if (categoryId) {
+    const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
+
     React.useEffect(() => {
       const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
       if (type) Store.filterProducts(type);
@@ -37,7 +39,7 @@ const ProductList: React.FC = observer(() => {
               );
             })}
           </ul>
-          <Filter></Filter>
+          <Filter type={type}></Filter>
         </div>
       </section>
     );
