@@ -11,14 +11,13 @@ import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
   const { categoryId } = useParams();
-  const [products, setProducts] = React.useState<Product[]>([]);
+
+  const products = Store.currentProducts;
 
   if (categoryId) {
     React.useEffect(() => {
       const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
-      console.log(type);
       if (type) Store.filterProducts(type);
-      setProducts(Store.currentProducts);
     }, [categoryId]);
 
     const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
