@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import React from "react";
 import { Store } from "../../store/Store";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 import styles from "./Filter.module.css";
 
@@ -41,19 +41,25 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
       <ul>
         {Object.keys(opts).map((key) => {
           return (
-            <li key={key}>
+            <li className={styles.param} key={key}>
               <h4>{dictionary[key]}</h4>
               {opts[key].map((opt: any) => {
                 return (
-                  <div key={opt}>
-                    <label htmlFor={opt}>{opt}</label>
-                    <input
-                      type="checkbox"
+                  <div className={styles.opt} key={opt}>
+                    <Form.Check
                       name={key}
                       value={opt}
                       id={opt}
                       onChange={(e) => changeHandler(e)}
                     />
+                    {/* <input
+                      type="checkbox"
+                      name={key}
+                      value={opt}
+                      id={opt}
+                      onChange={(e) => changeHandler(e)}
+                    /> */}
+                    <label htmlFor={opt}>{opt}</label>
                   </div>
                 );
               })}

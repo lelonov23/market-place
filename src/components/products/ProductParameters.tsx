@@ -20,7 +20,6 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
             {params.type === "phone" && (
               <li>{"Операционная система: " + params.os}</li>
             )}
-            {params.type === "phone" && <li>{"Батарея: " + params.battery}</li>}
             {params.type === "phone" && (
               <li>{"Разрешение экрана: " + params.resolution}</li>
             )}
@@ -30,9 +29,8 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
             {params.type === "tablet" && (
               <li>{"Процессор: " + params.processor}</li>
             )}
-            {params.type === "tablet" && (
-              <li>{"Батарея: " + params.battery}</li>
-            )}
+            {params.type === "tablet" ||
+              ("phone" && <li>{"Батарея: " + params.battery}</li>)}
           </ul>
         </section>
       );
