@@ -6,7 +6,7 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 78990,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "img": "/img/phone.jpg",
     "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "img": "/img/phone.jpg",
     "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "img": "/img/phone.jpg",
     "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 24,
@@ -213,7 +213,7 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 25,
@@ -222,7 +222,7 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 26,
@@ -231,7 +231,7 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 27,
@@ -240,6 +240,6 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   }
 ]

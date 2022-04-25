@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+
 import { Store } from "../../store/Store";
 
 import CategoryContent from "./CategoryContent";
@@ -39,7 +42,11 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
               >
                 <p>
                   {category.name}
-                  {activeCategory === category.id ? ` >` : ""}
+                  {activeCategory === category.id ? (
+                    <FontAwesomeIcon icon={faArrowRightLong} />
+                  ) : (
+                    ""
+                  )}
                 </p>
               </li>
             );

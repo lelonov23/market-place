@@ -8,7 +8,6 @@ import Catalog from "../catalog/Catalog";
 import CartModal from "../cart/CartModal";
 
 import styles from "./Header.module.css";
-import Cart from "../cart/Cart";
 import { observer } from "mobx-react";
 import { Context } from "../../App";
 
@@ -36,9 +35,10 @@ const Header: React.FC = observer(() => {
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
         <Catalog handleClose={() => setIsOpen(false)} />
       </Modal>
-      <CartModal handleClose={() => setCartIsOpen(false)} isOpen={cartIsOpen}>
-        <Cart />
-      </CartModal>
+      <CartModal
+        handleClose={() => setCartIsOpen(false)}
+        isOpen={cartIsOpen}
+      ></CartModal>
     </header>
   );
 });

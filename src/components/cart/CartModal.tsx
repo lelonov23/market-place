@@ -4,6 +4,8 @@ import { observer } from "mobx-react";
 import Portal from "../UI/Portal";
 
 import styles from "./CartModal.module.css";
+import Cart from "./Cart";
+import Orders from "./Orders";
 
 interface CartModalProps {
   isOpen: boolean;
@@ -11,7 +13,13 @@ interface CartModalProps {
 }
 
 const CartModal: React.FC<CartModalProps> = observer(
-  ({ children, isOpen, handleClose }) => {
+  ({ isOpen, handleClose }) => {
+    const [active, setActive] = React.useState<"cart" | "orders">("cart");
+
+    React.useEffect(() => {
+      setActive("cart");
+    }, [isOpen]);
+
     if (!isOpen) return null;
 
     return (
@@ -21,7 +29,25 @@ const CartModal: React.FC<CartModalProps> = observer(
             onClick={(e) => e.stopPropagation()}
             className={styles["modal-content"]}
           >
-            {children}
+            <div className={styles.tabs}>
+              <h2
+                className={`${styles.tab} ${
+                  active === "cart" ? styles.active : null
+                }`}
+                onClick={() => setActive("cart")}
+              >
+                Корзина
+              </h2>
+              <h2
+                className={`${styles.tab} ${
+                  active === "orders" ? styles.active : null
+                }`}
+                onClick={() => setActive("orders")}
+              >
+                Заказы
+              </h2>
+            </div>
+            {active === "cart" ? <Cart /> : <Orders />}
             <button className={styles.close} onClick={handleClose}>
               <i className="fa-solid fa-xmark"></i>
             </button>

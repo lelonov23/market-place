@@ -1,4 +1,5 @@
 import { makeObservable, observable, action, computed } from "mobx";
+import { isThisTypeNode } from "typescript";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
@@ -13,10 +14,10 @@ export interface Product {
   id: number;
   name: string;
   categoryId: number;
-  type?: string;
-  orders?: number;
-  img?: string;
+  type: string;
+  img: string;
   cost: number;
+  stock: number;
 }
 
 interface FilterData {
@@ -61,6 +62,8 @@ export class StoreImpl {
       setParams: action,
       setFilterOptions: action,
       addFilterData: action,
+      changeStock: action,
+      getItemStock: action,
       mainCategories: computed,
       subcategories: computed,
     });
@@ -168,6 +171,24 @@ export class StoreImpl {
         });
       });
     }
+  }
+
+  changeStock(prodId: number | undefined, payload: number) {
+    const foundProd = this.products.find((prod) => prod.id === prodId);
+    if (foundProd) {
+      foundProd.stock += payload;
+      this.products = this.products.map((prod) => {
+        if (prod.id === prodId) {
+          return foundProd;
+        } else return prod;
+      });
+    }
+  }
+
+  getItemStock(prodId: number): number {
+    const foundProd = this.products.find((prod) => prod.id === prodId);
+    if (foundProd && foundProd.stock) return foundProd.stock;
+    else return 0;
   }
 
   get mainCategories() {

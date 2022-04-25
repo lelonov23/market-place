@@ -1,11 +1,12 @@
 import { observer } from "mobx-react";
 import React from "react";
 import { Button } from "react-bootstrap";
-import { CartStore, Product } from "../../store/CartStore";
+import { CartStore } from "../../store/CartStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Cart.module.css";
+import { Product } from "../../store/Store";
 
 const addItemHandler = (product: Product) => {
   CartStore.addExistingItem(product);
@@ -28,7 +29,6 @@ const Cart: React.FC = observer(() => {
   // if (items.length)
   return (
     <div>
-      <h2>Корзина</h2>
       {items.length > 0 && (
         <ul>
           {items &&
