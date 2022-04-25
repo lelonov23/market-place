@@ -4,215 +4,242 @@
     "name": "Samsung Galaxy S20",
     "categoryId": 11,
     "img": "/img/phone.jpg",
+    "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 2,
     "name": "Apple iPhone 13",
     "categoryId": 11,
     "img": "/img/phone.jpg",
+    "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 3,
     "name": "Xiaomi 11X",
     "categoryId": 11,
     "img": "/img/phone.jpg",
+    "type": "phone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 4,
     "name": "Item 4",
     "categoryId": 12,
     "img": "/img/phone.jpg",
+    "type": "tablet",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 5,
     "name": "Item 5",
     "categoryId": 12,
     "img": "/img/phone.jpg",
+    "type": "tablet",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 6,
-    "name": "Item 6",
+    "name": "Samsung Galaxy Tab S8",
     "categoryId": 12,
     "img": "/img/phone.jpg",
-    "cost": 3300,
-    "orders": 0
+    "type": "tablet",
+    "cost": 78990,
+    "stock": 10
   },
   {
     "id": 7,
     "name": "Item 7",
     "categoryId": 13,
     "img": "/img/phone.jpg",
+    "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 8,
     "name": "Item 8",
     "categoryId": 13,
     "img": "/img/phone.jpg",
+    "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 9,
     "name": "Item 9",
     "categoryId": 13,
     "img": "/img/phone.jpg",
+    "type": "gadget",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 10,
     "name": "Item 10",
     "categoryId": 21,
     "img": "/img/phone.jpg",
+    "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 11,
     "name": "Item 11",
     "categoryId": 21,
     "img": "/img/phone.jpg",
+    "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 12,
     "name": "Item 12",
     "categoryId": 21,
     "img": "/img/phone.jpg",
+    "type": "laptop",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 13,
     "name": "Item 13",
     "categoryId": 22,
     "img": "/img/phone.jpg",
+    "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 14,
     "name": "Item 14",
     "categoryId": 22,
     "img": "/img/phone.jpg",
+    "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 15,
     "name": "Item 15",
     "categoryId": 22,
     "img": "/img/phone.jpg",
+    "type": "pc",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 16,
     "name": "Item 16",
     "categoryId": 23,
     "img": "/img/phone.jpg",
+    "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 17,
     "name": "Item 17",
     "categoryId": 23,
     "img": "/img/phone.jpg",
+    "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 18,
     "name": "Item 18",
     "categoryId": 23,
     "img": "/img/phone.jpg",
+    "type": "pc-miscellaneous",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 19,
     "name": "Item 19",
     "categoryId": 31,
     "img": "/img/phone.jpg",
+    "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 20,
     "name": "Item 20",
     "categoryId": 31,
     "img": "/img/phone.jpg",
+    "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 21,
     "name": "Item 21",
     "categoryId": 31,
     "img": "/img/phone.jpg",
+    "type": "tv",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 22,
     "name": "Item 22",
     "categoryId": 32,
     "img": "/img/phone.jpg",
+    "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 23,
     "name": "Item 23",
     "categoryId": 32,
     "img": "/img/phone.jpg",
+    "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 24,
     "name": "Item 24",
     "categoryId": 32,
     "img": "/img/phone.jpg",
+    "type": "headphone",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 25,
     "name": "Item 25",
     "categoryId": 33,
     "img": "/img/phone.jpg",
+    "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 26,
     "name": "Item 26",
     "categoryId": 33,
     "img": "/img/phone.jpg",
+    "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   },
   {
     "id": 27,
     "name": "Item 27",
     "categoryId": 33,
     "img": "/img/phone.jpg",
+    "type": "video",
     "cost": 3300,
-    "orders": 0
+    "stock": 10
   }
 ]

@@ -1,162 +1,189 @@
 [
   {
     "productId": 1,
-    "display": "1920 x 800",
+    "type": "phone",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 2,
-    "display": "1920 x 800",
+    "type": "phone",
+    "resolution": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 3,
-    "display": "1920 x 800",
+    "type": "phone",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 4,
-    "display": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "tablet",
+    "processor": "Qualcomm",
+    "display": "IPS",
+    "battery": "7000mAh"
   },
   {
     "productId": 5,
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "tablet",
+    "processor": "MediaTek",
+    "display": "AMOLED",
+    "battery": "7000mAh"
   },
   {
     "productId": 6,
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "tablet",
+    "processor": "Exynos",
+    "display": "Dynamic AMOLED",
+    "battery": "7000mAh"
   },
   {
     "productId": 7,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 8,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 9,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 10,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 11,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 12,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 13,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 14,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 15,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 16,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 17,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 18,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 19,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 20,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 21,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 22,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 23,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 24,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 25,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 26,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 27,
+    "type": "phone",
     "display": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"

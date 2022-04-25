@@ -2,26 +2,32 @@ import React from "react";
 import { observer } from "mobx-react";
 import { useParams } from "react-router-dom";
 
-import { Store } from "../../store/Store";
+import { Store, Product } from "../../store/Store";
 
 import ProductItem from "./ProductItem";
 
 import styles from "./ProductList.module.css";
+import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
   const { categoryId } = useParams();
 
+  const products = Store.currentProducts;
+
   if (categoryId) {
-    const products = Store.products.filter(
-      (product) => product.categoryId === +categoryId
-    );
+    const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
+
+    React.useEffect(() => {
+      const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
+      if (type) Store.filterProducts(type);
+    }, [categoryId]);
 
     const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
     return (
       <section>
         <h1>
-          {subcategory?.name}{" "}
-          <span className={styles.count}>{products.length} товаров</span>
+          {subcategory?.name}
+          <span className={styles.count}> {products.length} товаров</span>
         </h1>
         <div className={styles.content}>
           <ul className={styles.list}>
@@ -33,7 +39,7 @@ const ProductList: React.FC = observer(() => {
               );
             })}
           </ul>
-          <div>filters placeholder</div>
+          <Filter type={type}></Filter>
         </div>
       </section>
     );

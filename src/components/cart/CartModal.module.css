@@ -35,3 +35,16 @@
   background-color: transparent;
   font-size: 2rem;
 }
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.active {
+  color: rgb(0, 87, 158);
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { CartStore } from "../../store/CartStore";
 
-import { Product } from "../../store/Store";
+import { Product, Store } from "../../store/Store";
 
 import styles from "./ProductItem.module.css";
 import ProductParameters from "./ProductParameters";
@@ -21,7 +21,8 @@ const addToCartHandle = (
   if (CartStore.items.find((item) => item.product.id === product.id))
     CartStore.addExistingItem(product);
   else CartStore.addNewItem(product);
-  setCartIsOpen(true);
+  const stock = Store.getItemStock(product.id);
+  if (stock > 0) setCartIsOpen(true);
 };
 
 const ProductItem: React.FC<ProductItemProps> = observer(({ product }) => {
@@ -37,7 +38,10 @@ const ProductItem: React.FC<ProductItemProps> = observer(({ product }) => {
         </div>
       </div>
       <div className={styles.orderControl}>
-        <Button onClick={() => addToCartHandle(product, setCartIsOpen)}>
+        <Button
+          disabled={Store.getItemStock(product.id) === 0}
+          onClick={() => addToCartHandle(product, setCartIsOpen)}
+        >
           В корзину
         </Button>
         <span className={styles.price}>{product.cost}р.</span>

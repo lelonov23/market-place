@@ -1,9 +1,12 @@
 import { observer } from "mobx-react";
 import React from "react";
 import { Button } from "react-bootstrap";
-import { CartStore, Product } from "../../store/CartStore";
+import { CartStore } from "../../store/CartStore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Cart.module.css";
+import { Product } from "../../store/Store";
 
 const addItemHandler = (product: Product) => {
   CartStore.addExistingItem(product);
@@ -17,12 +20,16 @@ const removeAllOfItemHandler = (product: Product) => {
   CartStore.removeAllOfItem(product);
 };
 
+const orderHandler = () => {
+  CartStore.confirmOrder();
+};
+
 const Cart: React.FC = observer(() => {
   const items = CartStore.items;
-  if (items.length)
-    return (
-      <div>
-        <h2>Корзина</h2>
+  // if (items.length)
+  return (
+    <div>
+      {items.length > 0 && (
         <ul>
           {items &&
             items.map((item) => {
@@ -31,33 +38,33 @@ const Cart: React.FC = observer(() => {
                   <h3>{item.product.name}</h3>
                   <div className={styles.countControl}>
                     <Button onClick={() => removeItemHandler(item.product)}>
-                      <i className="fa-solid fa-minus"></i>
+                      <FontAwesomeIcon icon={faMinus} />
                     </Button>
                     <span>{item.count}</span>
                     <Button onClick={() => addItemHandler(item.product)}>
-                      <i className="fa-solid fa-plus"></i>
+                      <FontAwesomeIcon icon={faPlus} />
                     </Button>
                     <Button
                       onClick={() => removeAllOfItemHandler(item.product)}
                       className={styles.delete}
                     >
-                      <i className="fa-solid fa-trash-can"></i>
+                      <FontAwesomeIcon icon={faTrashCan} />
                     </Button>
                   </div>
                 </li>
               );
             })}
         </ul>
-        <h2>Итого: {CartStore.totalPrice}</h2>
-      </div>
-    );
-  else
-    return (
-      <div>
-        <h2>Корзина</h2>
-        <p>Корзина пока пуста.</p>
-      </div>
-    );
+      )}
+      {items.length > 0 && (
+        <div className={styles.orderControl}>
+          <h2>Итого: {CartStore.totalPrice}</h2>
+          <Button onClick={orderHandler}>Сделать заказ</Button>
+        </div>
+      )}
+      {items.length == 0 && <p>Корзина пока пуста.</p>}
+    </div>
+  );
 });
 
 export default Cart;

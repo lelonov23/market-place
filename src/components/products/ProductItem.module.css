@@ -29,7 +29,7 @@
 .price {
   font-weight: 700;
   padding: 0.4rem 1.2rem;
-  background-color: rgba(255, 238, 0, 0.5);
+  /* background-color: rgba(255, 238, 0, 0.5); */
   border-radius: 0.3rem;
 }
 

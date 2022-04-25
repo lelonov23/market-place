@@ -1,0 +1,35 @@
+.filter {
+  background-color: rgba(0, 119, 255, 0.05);
+  width: calc(30% - 2rem);
+  margin-left: 1rem;
+  border-radius: 3px;
+  height: max-content;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter h3 {
+  font-weight: 700;
+  color: rgb(77, 77, 77);
+}
+
+.param {
+  margin: 1rem 0;
+  color: rgb(77, 77, 77);
+}
+
+.param h4 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* color: rgb(77, 77, 77); */
+}
+
+.opt {
+  display: flex;
+}
+
+.opt input {
+  margin-right: 1rem;
+}

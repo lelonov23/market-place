@@ -1,12 +1,13 @@
 import React from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import Modal from "../UI/Modal";
 import Catalog from "../catalog/Catalog";
 import CartModal from "../cart/CartModal";
 
 import styles from "./Header.module.css";
-import Cart from "../cart/Cart";
 import { observer } from "mobx-react";
 import { Context } from "../../App";
 
@@ -25,7 +26,7 @@ const Header: React.FC = observer(() => {
           <Col className="text-center " sm={8}></Col>
           <Col className="text-center " sm={2}>
             <Button onClick={() => setCartIsOpen(true)} variant="primary">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <FontAwesomeIcon icon={faCartShopping} />
             </Button>
           </Col>
         </Row>
@@ -34,9 +35,10 @@ const Header: React.FC = observer(() => {
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
         <Catalog handleClose={() => setIsOpen(false)} />
       </Modal>
-      <CartModal handleClose={() => setCartIsOpen(false)} isOpen={cartIsOpen}>
-        <Cart />
-      </CartModal>
+      <CartModal
+        handleClose={() => setCartIsOpen(false)}
+        isOpen={cartIsOpen}
+      ></CartModal>
     </header>
   );
 });

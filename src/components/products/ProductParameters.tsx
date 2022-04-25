@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { Store, Product } from "../../store/Store";
+import { Store, Product, Param } from "../../store/Store";
 
 import styles from "./ProductParameters.module.css";
 
@@ -13,20 +13,24 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
   ({ product }) => {
     const params = Store.params.find((param) => param.productId === product.id);
     if (params) {
-      const keys = Object.keys(params).filter((key) => key !== "productId");
       return (
         <section className={styles.paramList}>
           <h2>Параметры</h2>
           <ul>
-            {keys.map((key) => {
-              return (
-                <li>
-                  <p>
-                    {key}: {params[key]}
-                  </p>
-                </li>
-              );
-            })}
+            {params.type === "phone" && (
+              <li>{"Операционная система: " + params.os}</li>
+            )}
+            {params.type === "phone" && (
+              <li>{"Разрешение экрана: " + params.resolution}</li>
+            )}
+            {params.type === "tablet" && (
+              <li>{"Дисплей: " + params.display}</li>
+            )}
+            {params.type === "tablet" && (
+              <li>{"Процессор: " + params.processor}</li>
+            )}
+            {params.type === "tablet" ||
+              ("phone" && <li>{"Батарея: " + params.battery}</li>)}
           </ul>
         </section>
       );
