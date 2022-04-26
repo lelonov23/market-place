@@ -37,3 +37,7 @@
   background-color: rgb(73, 139, 215);
   border-color: rgb(73, 139, 215);
 }
+
+.desc h3 {
+  font-size: 1.3rem;
+}

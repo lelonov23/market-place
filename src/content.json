@@ -29,8 +29,8 @@
   },
   {
     "id": 13,
-    "name": "Гаджеты",
-    "type": "gadget",
+    "name": "Зарядные устройства",
+    "type": "charger",
     "categoryId": 1
   },
   {

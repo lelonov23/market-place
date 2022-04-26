@@ -18,19 +18,29 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
           <h2>Параметры</h2>
           <ul>
             {params.type === "phone" && (
-              <li>{"Операционная система: " + params.os}</li>
+              <>
+                <li>{"Операционная система: " + params.os}</li>
+                <li>{"Разрешение экрана: " + params.resolution}</li>
+                <li>{"Батарея: " + params.battery}</li>
+              </>
             )}
-            {params.type === "phone" && (
-              <li>{"Разрешение экрана: " + params.resolution}</li>
-            )}
+
             {params.type === "tablet" && (
-              <li>{"Дисплей: " + params.display}</li>
+              <>
+                <li>{"Дисплей: " + params.display}</li>
+                <li>{"Процессор: " + params.processor}</li>
+                <li>{"Батарея: " + params.battery}</li>
+              </>
             )}
-            {params.type === "tablet" && (
-              <li>{"Процессор: " + params.processor}</li>
+
+            {params.type === "charger" && (
+              <>
+                <li>{"Тип устройства: " + params.chargerType}</li>
+                <li>{"Бренд: " + params.brand}</li>
+
+                <li>{"Разъём: " + params.port}</li>
+              </>
             )}
-            {params.type === "tablet" ||
-              ("phone" && <li>{"Батарея: " + params.battery}</li>)}
           </ul>
         </section>
       );

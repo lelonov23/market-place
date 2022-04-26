@@ -43,24 +43,24 @@
   },
   {
     "productId": 7,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Xiaomi",
+    "port": "USB-C"
   },
   {
     "productId": 8,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Buro",
+    "port": "MicroUSB"
   },
   {
     "productId": 9,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Digma",
+    "port": "USB-C"
   },
   {
     "productId": 10,

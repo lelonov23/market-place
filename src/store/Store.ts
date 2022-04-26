@@ -1,5 +1,4 @@
 import { makeObservable, observable, action, computed } from "mobx";
-import { isThisTypeNode } from "typescript";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
@@ -64,6 +63,7 @@ export class StoreImpl {
       addFilterData: action,
       changeStock: action,
       getItemStock: action,
+      priceRange: computed,
       mainCategories: computed,
       subcategories: computed,
     });
@@ -189,6 +189,16 @@ export class StoreImpl {
     const foundProd = this.products.find((prod) => prod.id === prodId);
     if (foundProd && foundProd.stock) return foundProd.stock;
     else return 0;
+  }
+
+  get priceRange(): number[] {
+    const priceArray = this.currentProducts.map((prod) => prod.cost);
+    const rangeArray: [number, number] = [Infinity, -Infinity];
+    priceArray.forEach((price) => {
+      if (price < rangeArray[0]) rangeArray[0] = price;
+      if (price > rangeArray[1]) rangeArray[1] = price;
+    });
+    return rangeArray;
   }
 
   get mainCategories() {
