@@ -44,7 +44,7 @@ export class StoreImpl {
   products: Product[] = [];
   currentProducts: Product[] = [];
   params: Param[] = [];
-  filterOptions: any = {};
+  filterOptions: { [index: string]: any } = {};
   filterData: FilterData[] = [];
 
   constructor() {

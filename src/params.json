@@ -25,7 +25,7 @@
     "type": "tablet",
     "processor": "Qualcomm",
     "display": "IPS",
-    "battery": "7000mAh"
+    "battery": "5200mAh"
   },
   {
     "productId": 5,
@@ -39,7 +39,7 @@
     "type": "tablet",
     "processor": "Exynos",
     "display": "Dynamic AMOLED",
-    "battery": "7000mAh"
+    "battery": "4800mAh"
   },
   {
     "productId": 7,
