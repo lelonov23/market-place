@@ -85,12 +85,16 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                             </p>
                           </Link>
                           <ul>
-                            {Store.subcategories
-                              .filter((cat) => cat.categoryId === subcat.id)
-                              .map((cat) => {
+                            {subcat.filters?.length &&
+                              subcat.filters.map((filter) => {
                                 return (
-                                  <li key={cat.id}>
-                                    <p>{cat.name}</p>
+                                  <li key={filter.id}>
+                                    <Link
+                                      onClick={handleClose}
+                                      to={`/products/${subcat.id}/${filter.id}`}
+                                    >
+                                      {filter.name}
+                                    </Link>
                                   </li>
                                 );
                               })}

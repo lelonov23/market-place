@@ -7,6 +7,13 @@ export interface Category {
   categoryId: number | null;
   type?: string;
   img?: string;
+  filters?: PresetFilter[];
+}
+
+export interface PresetFilter {
+  id: number;
+  name: string;
+  filters: FilterData[];
 }
 
 export interface Product {
@@ -63,6 +70,7 @@ export class StoreImpl {
       addFilterData: action,
       changeStock: action,
       getItemStock: action,
+      filterByPresetData: action,
       priceRange: computed,
       mainCategories: computed,
       subcategories: computed,
@@ -147,7 +155,16 @@ export class StoreImpl {
     this.filterProductsByParams(type);
   }
 
+  filterByPresetData(type: string | undefined, data: PresetFilter) {
+    data.filters.forEach((filter) => {
+      Store.filterData = [...Store.filterData, filter];
+    });
+    Store.filterProductsByParams(type);
+  }
+
   filterProductsByParams(type: string | undefined) {
+    console.log(this.filterData);
+
     this.currentProducts = this.products.filter((prod) => {
       return prod.type === type;
     });
