@@ -6,7 +6,8 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 106990,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 119990,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 84990,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 16790,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 35990,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 78990,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "img": "/img/phone.jpg",
     "type": "charger",
     "cost": 3190,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "img": "/img/phone.jpg",
     "type": "charger",
     "cost": 490,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "img": "https://cdn.citilink.ru/oemLM_Gj5K3o70kOgFUD0XPz7rUrfQYIltyjHDYH_lA/fit/400/400/ce/false/plain/items/1079233_v01_m.jpg",
     "type": "charger",
     "cost": 1000,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "img": "/img/phone.jpg",
     "type": "pc-miscellaneous",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "img": "/img/phone.jpg",
     "type": "tv",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "img": "/img/phone.jpg",
     "type": "headphone",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   },
   {
     "id": 27,
@@ -240,6 +266,7 @@
     "img": "/img/phone.jpg",
     "type": "video",
     "cost": 3300,
-    "stock": 10
+    "stock": 10,
+    "orders": 0
   }
 ]

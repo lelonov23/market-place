@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, computed } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
@@ -24,6 +24,7 @@ export interface Product {
   img: string;
   cost: number;
   stock: number;
+  orders: number;
 }
 
 interface FilterData {
@@ -55,26 +56,7 @@ export class StoreImpl {
   filterData: FilterData[] = [];
 
   constructor() {
-    makeObservable(this, {
-      categories: observable,
-      products: observable,
-      currentProducts: observable,
-      filterOptions: observable,
-      filterData: observable,
-      filterProducts: action,
-      filterProductsByParams: action,
-      setCategories: action,
-      setProducts: action,
-      setParams: action,
-      setFilterOptions: action,
-      addFilterData: action,
-      changeStock: action,
-      getItemStock: action,
-      filterByPresetData: action,
-      priceRange: computed,
-      mainCategories: computed,
-      subcategories: computed,
-    });
+    makeAutoObservable(this);
   }
 
   setCategories(categories: Category[]) {
@@ -206,6 +188,18 @@ export class StoreImpl {
     const foundProd = this.products.find((prod) => prod.id === prodId);
     if (foundProd && foundProd.stock) return foundProd.stock;
     else return 0;
+  }
+
+  changeOrderCount(id: number, value: number) {
+    const product = this.products.find((prod) => prod.id === id);
+
+    if (product) {
+      const newProduct = { ...product, orders: product.orders + value };
+      this.products = this.products.map((prod) => {
+        if (prod.id === id) return newProduct;
+        else return prod;
+      });
+    }
   }
 
   get priceRange(): number[] {

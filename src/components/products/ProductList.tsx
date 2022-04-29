@@ -10,6 +10,8 @@ import styles from "./ProductList.module.css";
 import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
+  console.log(Store.products);
+
   const { categoryId, filterId } = useParams();
 
   // store observables init
@@ -26,21 +28,24 @@ const ProductList: React.FC = observer(() => {
       .find((cat) => cat.id === +categoryId)
       ?.filters?.find((filter) => filter.id === +filterId);
 
-  if (categoryId && products && type) {
-    // category filter apply
-    React.useEffect(() => {
+  React.useEffect(() => {
+    if (categoryId) {
       const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
       if (type) Store.filterProducts(type);
-    }, [categoryId, filterId]);
+    }
+  }, [categoryId, filterId]);
 
-    // preset filter apply
-    React.useEffect(() => {
-      if (categoryId && filterId) {
-        if (filter !== "" && filter?.filters && type) {
-          Store.filterByPresetData(type, filter);
-        }
+  // preset filter apply
+  React.useEffect(() => {
+    if (categoryId && filterId) {
+      if (filter !== "" && filter?.filters && type) {
+        Store.filterByPresetData(type, filter);
       }
-    }, [filterId]);
+    }
+  }, [filterId]);
+
+  if (categoryId && products && type) {
+    // category filter apply
 
     const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
     return (

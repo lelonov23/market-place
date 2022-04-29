@@ -79,6 +79,10 @@ export class CartStoreImpl {
 
     this.orders = [...this.orders, newOrder];
 
+    this.items.forEach((item) => {
+      Store.changeOrderCount(item.product.id, item.count);
+    });
+
     this.items = [];
   }
 
