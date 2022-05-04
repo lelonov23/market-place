@@ -1,4 +1,5 @@
 import { makeObservable, observable, action, computed } from "mobx";
+import { StringLiteralLike } from "typescript";
 import { Product, Store } from "./Store";
 
 export interface CartItem {
@@ -11,6 +12,20 @@ export interface Order {
   id: string | number;
   items: CartItem[];
   date: Date;
+  name: string;
+  city: string;
+  street: string;
+  "backup-phone"?: string;
+  phone: string;
+}
+
+export interface OrderData {
+  name: string;
+  lastname: string;
+  phone: string;
+  "backup-phone"?: string;
+  city: string;
+  street: string;
 }
 
 export class CartStoreImpl {
@@ -70,12 +85,18 @@ export class CartStoreImpl {
     });
   }
 
-  confirmOrder() {
+  confirmOrder(data: OrderData) {
     const newOrder: Order = {
       id: new Date().toISOString(),
+      name: `${data.name} ${data.lastname}`,
+      city: data.city,
+      street: data.street,
+      phone: data.phone,
       items: [...this.items],
       date: new Date(),
     };
+
+    if (data["backup-phone"]) newOrder["backup-phone"] = data["backup-phone"];
 
     this.orders = [...this.orders, newOrder];
 

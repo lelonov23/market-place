@@ -12,6 +12,7 @@ const OrderItem: React.FC<OrderProps> = observer(({ order }) => {
   return (
     <div className={styles.order}>
       <h3>{order.id}</h3>
+      <p>{order.name}</p>
       <ul>
         {order.items.map((item) => {
           return (

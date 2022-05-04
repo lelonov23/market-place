@@ -3,8 +3,8 @@ import { Container, Button, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
-  faM,
   faMagnifyingGlass,
+  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Modal from "../UI/Modal";
@@ -14,15 +14,21 @@ import CartModal from "../cart/CartModal";
 import styles from "./Header.module.css";
 import { observer } from "mobx-react";
 import { Context } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = observer(() => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { cartIsOpen, setCartIsOpen } = React.useContext(Context);
+  const navigate = useNavigate();
+
   return (
     <header className={styles.header}>
       <Container className="align-center" fluid="md">
         <Row>
           <Col className="text-center " sm={2}>
+            <Button onClick={() => navigate("/")}>
+              <FontAwesomeIcon icon={faHouse} />
+            </Button>
             <Button onClick={() => setIsOpen(true)} variant="primary">
               Каталог
             </Button>
