@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button } from "react-bootstrap";
 import { CartStore } from "../../store/CartStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +24,11 @@ const orderHandler = () => {
   CartStore.confirmOrder();
 };
 
-const Cart: React.FC = observer(() => {
+interface CartProps {
+  onOrder: Dispatch<SetStateAction<"cart" | "orders">>;
+}
+
+const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
   const items = CartStore.items;
   // if (items.length)
   return (
@@ -59,7 +63,14 @@ const Cart: React.FC = observer(() => {
       {items.length > 0 && (
         <div className={styles.orderControl}>
           <h2>Итого: {CartStore.totalPrice}</h2>
-          <Button onClick={orderHandler}>Сделать заказ</Button>
+          <Button
+            onClick={() => {
+              orderHandler();
+              onOrder("orders");
+            }}
+          >
+            Сделать заказ
+          </Button>
         </div>
       )}
       {items.length == 0 && <p>Корзина пока пуста.</p>}

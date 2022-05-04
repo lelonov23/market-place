@@ -19,6 +19,13 @@
     "name": "Смартфоны",
     "type": "phone",
     "categoryId": 1,
+    "filters": [
+      {
+        "id": 101,
+        "name": "Смартфоны Apple",
+        "filters": [{ "name": "os", "value": ["iOS"] }]
+      }
+    ],
     "img": "/img/phone-cat.jpg"
   },
   {
@@ -29,8 +36,8 @@
   },
   {
     "id": 13,
-    "name": "Гаджеты",
-    "type": "gadget",
+    "name": "Зарядные устройства",
+    "type": "charger",
     "categoryId": 1
   },
   {

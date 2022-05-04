@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { observer } from "mobx-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,6 +24,13 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
     setActiveCategory(id);
   };
 
+  const handleOpenCategoryPage = (catId: number) => {
+    navigate(`/category/${catId}`);
+    handleClose();
+  };
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.tabs}>
       <div className={styles.catList}>
@@ -34,6 +41,7 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
               <li
                 key={category.id}
                 onMouseEnter={() => handleOpenCategory(category.id)}
+                onClick={() => handleOpenCategoryPage(category.id)}
                 className={
                   activeCategory === category.id
                     ? `${styles.active} ${styles.categoryLink}`
@@ -85,12 +93,16 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                             </p>
                           </Link>
                           <ul>
-                            {Store.subcategories
-                              .filter((cat) => cat.categoryId === subcat.id)
-                              .map((cat) => {
+                            {subcat.filters?.length &&
+                              subcat.filters.map((filter) => {
                                 return (
-                                  <li key={cat.id}>
-                                    <p>{cat.name}</p>
+                                  <li key={filter.id}>
+                                    <Link
+                                      onClick={handleClose}
+                                      to={`/products/${subcat.id}/${filter.id}`}
+                                    >
+                                      {filter.name}
+                                    </Link>
                                   </li>
                                 );
                               })}

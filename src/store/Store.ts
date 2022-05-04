@@ -1,5 +1,4 @@
-import { makeObservable, observable, action, computed } from "mobx";
-import { isThisTypeNode } from "typescript";
+import { makeAutoObservable } from "mobx";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
@@ -8,6 +7,13 @@ export interface Category {
   categoryId: number | null;
   type?: string;
   img?: string;
+  filters?: PresetFilter[];
+}
+
+export interface PresetFilter {
+  id: number;
+  name: string;
+  filters: FilterData[];
 }
 
 export interface Product {
@@ -18,6 +24,7 @@ export interface Product {
   img: string;
   cost: number;
   stock: number;
+  orders: number;
 }
 
 interface FilterData {
@@ -45,28 +52,11 @@ export class StoreImpl {
   products: Product[] = [];
   currentProducts: Product[] = [];
   params: Param[] = [];
-  filterOptions: any = {};
+  filterOptions: { [index: string]: any } = {};
   filterData: FilterData[] = [];
 
   constructor() {
-    makeObservable(this, {
-      categories: observable,
-      products: observable,
-      currentProducts: observable,
-      filterOptions: observable,
-      filterData: observable,
-      filterProducts: action,
-      filterProductsByParams: action,
-      setCategories: action,
-      setProducts: action,
-      setParams: action,
-      setFilterOptions: action,
-      addFilterData: action,
-      changeStock: action,
-      getItemStock: action,
-      mainCategories: computed,
-      subcategories: computed,
-    });
+    makeAutoObservable(this);
   }
 
   setCategories(categories: Category[]) {
@@ -147,7 +137,16 @@ export class StoreImpl {
     this.filterProductsByParams(type);
   }
 
+  filterByPresetData(type: string | undefined, data: PresetFilter) {
+    data.filters.forEach((filter) => {
+      Store.filterData = [...Store.filterData, filter];
+    });
+    Store.filterProductsByParams(type);
+  }
+
   filterProductsByParams(type: string | undefined) {
+    console.log(this.filterData);
+
     this.currentProducts = this.products.filter((prod) => {
       return prod.type === type;
     });
@@ -191,12 +190,46 @@ export class StoreImpl {
     else return 0;
   }
 
+  changeOrderCount(id: number, value: number) {
+    const product = this.products.find((prod) => prod.id === id);
+
+    if (product) {
+      const newProduct = { ...product, orders: product.orders + value };
+      this.products = this.products.map((prod) => {
+        if (prod.id === id) return newProduct;
+        else return prod;
+      });
+    }
+  }
+
+  getCategoryOrders(catId: number) {
+    return this.products
+      .filter((prod) => prod.categoryId === catId)
+      .reduce((acc, currentProduct) => acc + currentProduct.orders, 0);
+  }
+
+  get priceRange(): number[] {
+    const priceArray = this.currentProducts.map((prod) => prod.cost);
+    const rangeArray: [number, number] = [Infinity, -Infinity];
+    priceArray.forEach((price) => {
+      if (price < rangeArray[0]) rangeArray[0] = price;
+      if (price > rangeArray[1]) rangeArray[1] = price;
+    });
+    return rangeArray;
+  }
+
   get mainCategories() {
     return this.categories.filter((cat) => cat.categoryId === null);
   }
 
   get subcategories() {
     return this.categories.filter((cat) => cat.categoryId !== null);
+  }
+
+  get popularCategories() {
+    return this.subcategories.sort(
+      (a, b) => this.getCategoryOrders(b.id) - this.getCategoryOrders(a.id)
+    );
   }
 }
 

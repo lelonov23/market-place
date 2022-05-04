@@ -9,14 +9,14 @@
   {
     "productId": 2,
     "type": "phone",
-    "resolution": "1920 x 800",
+    "resolution": "2688 x 1242",
     "os": "iOS",
-    "battery": "4500mAh"
+    "battery": "6500mAh"
   },
   {
     "productId": 3,
     "type": "phone",
-    "resolution": "1920 x 800",
+    "resolution": "1366×768",
     "os": "Android",
     "battery": "4500mAh"
   },
@@ -25,7 +25,7 @@
     "type": "tablet",
     "processor": "Qualcomm",
     "display": "IPS",
-    "battery": "7000mAh"
+    "battery": "5200mAh"
   },
   {
     "productId": 5,
@@ -39,28 +39,28 @@
     "type": "tablet",
     "processor": "Exynos",
     "display": "Dynamic AMOLED",
-    "battery": "7000mAh"
+    "battery": "4800mAh"
   },
   {
     "productId": 7,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Xiaomi",
+    "port": "USB-C"
   },
   {
     "productId": 8,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Buro",
+    "port": "MicroUSB"
   },
   {
     "productId": 9,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "charger",
+    "chargerType": "Сетевое з/у",
+    "brand": "Digma",
+    "port": "USB-C"
   },
   {
     "productId": 10,

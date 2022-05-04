@@ -11,9 +11,9 @@ import HomePage from "./components/routes/HomePage";
 import SubcategoryList from "./components/SubcategoryList";
 import ProductList from "./components/products/ProductList";
 
-import categories from "./content.json";
-import products from "./items.json";
-import params from "./params.json";
+import categories from "./json/content.json";
+import products from "./json/items.json";
+import params from "./json/params.json";
 
 import { Container } from "react-bootstrap";
 
@@ -49,6 +49,10 @@ const App: React.FC = observer(() => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/category/:categoryId" element={<SubcategoryList />} />
+            <Route
+              path="/products/:categoryId/:filterId"
+              element={<ProductList />}
+            />
             <Route path="/products/:categoryId" element={<ProductList />} />
           </Routes>
         </Container>

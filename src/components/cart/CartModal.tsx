@@ -47,7 +47,7 @@ const CartModal: React.FC<CartModalProps> = observer(
                 Заказы
               </h2>
             </div>
-            {active === "cart" ? <Cart /> : <Orders />}
+            {active === "cart" ? <Cart onOrder={setActive} /> : <Orders />}
             <button className={styles.close} onClick={handleClose}>
               <i className="fa-solid fa-xmark"></i>
             </button>

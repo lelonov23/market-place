@@ -12,10 +12,10 @@ const HomePage: React.FC = observer(() => {
     <section>
       <h1>Популярные категории</h1>
       <ul className={styles.categoryList}>
-        {Store.mainCategories.map((category) => {
+        {Store.popularCategories.map((category) => {
           return (
             <li className={styles.categoryItem} key={category.id}>
-              <Link to={`/category/${category.id}`}>
+              <Link to={`/products/${category.id}`}>
                 <CategoryItem category={category} />
               </Link>
             </li>

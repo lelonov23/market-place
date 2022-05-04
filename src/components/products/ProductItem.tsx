@@ -42,7 +42,7 @@ const ProductItem: React.FC<ProductItemProps> = observer(({ product }) => {
           disabled={Store.getItemStock(product.id) === 0}
           onClick={() => addToCartHandle(product, setCartIsOpen)}
         >
-          В корзину
+          {Store.getItemStock(product.id) === 0 ? "Нет в наличии" : "В корзину"}
         </Button>
         <span className={styles.price}>{product.cost}р.</span>
       </div>

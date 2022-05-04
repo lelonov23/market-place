@@ -1,9 +1,12 @@
 import { observer } from "mobx-react";
 import React from "react";
 import { Store } from "../../store/Store";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import Nouislider from "nouislider-react";
+import "nouislider/distribute/nouislider.css";
 
 import styles from "./Filter.module.css";
+import Slider from "./Slider";
 
 interface Dict {
   [index: string]: any;
@@ -27,6 +30,9 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
     battery: "Батарея",
     resolution: "Разрешение экрана",
     processor: "Процессор",
+    brand: "Бренд",
+    port: "Разъём",
+    chargerType: "Тип устройства",
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +44,7 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
   return (
     <div className={styles.filter}>
       <h3>Фильтры</h3>
+      {/* <Slider></Slider> */}
       <ul>
         {Object.keys(opts).map((key) => {
           return (
@@ -52,13 +59,6 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
                       id={opt}
                       onChange={(e) => changeHandler(e)}
                     />
-                    {/* <input
-                      type="checkbox"
-                      name={key}
-                      value={opt}
-                      id={opt}
-                      onChange={(e) => changeHandler(e)}
-                    /> */}
                     <label htmlFor={opt}>{opt}</label>
                   </div>
                 );
