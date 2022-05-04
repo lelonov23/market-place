@@ -20,12 +20,8 @@ const removeAllOfItemHandler = (product: Product) => {
   CartStore.removeAllOfItem(product);
 };
 
-const orderHandler = () => {
-  CartStore.confirmOrder();
-};
-
 interface CartProps {
-  onOrder: Dispatch<SetStateAction<"cart" | "orders">>;
+  onOrder: Dispatch<SetStateAction<boolean>>;
 }
 
 const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
@@ -65,8 +61,8 @@ const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
           <h2>Итого: {CartStore.totalPrice}</h2>
           <Button
             onClick={() => {
-              orderHandler();
-              onOrder("orders");
+              // orderHandler();
+              onOrder(true);
             }}
           >
             Сделать заказ

@@ -71,7 +71,7 @@ export class StoreImpl {
     this.params = params;
   }
 
-  setFilterOptions(opts: any) {
+  setFilterOptions(opts: { [index: string]: any }) {
     this.filterOptions = opts;
   }
 

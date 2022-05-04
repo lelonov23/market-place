@@ -6,6 +6,7 @@ import Portal from "../UI/Portal";
 import styles from "./CartModal.module.css";
 import Cart from "./Cart";
 import Orders from "./Orders";
+import OrderForm from "./OrderForm";
 
 interface CartModalProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ interface CartModalProps {
 
 const CartModal: React.FC<CartModalProps> = observer(
   ({ isOpen, handleClose }) => {
+    const [isOrderForm, setIsOrderForm] = React.useState(false);
+
     const [active, setActive] = React.useState<"cart" | "orders">("cart");
 
     React.useEffect(() => {
@@ -29,25 +32,39 @@ const CartModal: React.FC<CartModalProps> = observer(
             onClick={(e) => e.stopPropagation()}
             className={styles["modal-content"]}
           >
-            <div className={styles.tabs}>
-              <h2
-                className={`${styles.tab} ${
-                  active === "cart" ? styles.active : null
-                }`}
-                onClick={() => setActive("cart")}
-              >
-                Корзина
-              </h2>
-              <h2
-                className={`${styles.tab} ${
-                  active === "orders" ? styles.active : null
-                }`}
-                onClick={() => setActive("orders")}
-              >
-                Заказы
-              </h2>
-            </div>
-            {active === "cart" ? <Cart onOrder={setActive} /> : <Orders />}
+            {!isOrderForm && (
+              <div className={styles.tabs}>
+                <h2
+                  className={`${styles.tab} ${
+                    active === "cart" ? styles.active : null
+                  }`}
+                  onClick={() => setActive("cart")}
+                >
+                  Корзина
+                </h2>
+                <h2
+                  className={`${styles.tab} ${
+                    active === "orders" ? styles.active : null
+                  }`}
+                  onClick={() => setActive("orders")}
+                >
+                  Заказы
+                </h2>
+              </div>
+            )}
+            {active === "cart" && !isOrderForm ? (
+              <Cart onOrder={setIsOrderForm} />
+            ) : (
+              !isOrderForm && <Orders />
+            )}
+
+            {isOrderForm && (
+              <OrderForm
+                setActive={setActive}
+                setIsOrderForm={setIsOrderForm}
+              />
+            )}
+
             <button className={styles.close} onClick={handleClose}>
               <i className="fa-solid fa-xmark"></i>
             </button>
