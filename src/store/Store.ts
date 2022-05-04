@@ -202,6 +202,12 @@ export class StoreImpl {
     }
   }
 
+  getCategoryOrders(catId: number) {
+    return this.products
+      .filter((prod) => prod.categoryId === catId)
+      .reduce((acc, currentProduct) => acc + currentProduct.orders, 0);
+  }
+
   get priceRange(): number[] {
     const priceArray = this.currentProducts.map((prod) => prod.cost);
     const rangeArray: [number, number] = [Infinity, -Infinity];
@@ -218,6 +224,12 @@ export class StoreImpl {
 
   get subcategories() {
     return this.categories.filter((cat) => cat.categoryId !== null);
+  }
+
+  get popularCategories() {
+    return this.subcategories.sort(
+      (a, b) => this.getCategoryOrders(b.id) - this.getCategoryOrders(a.id)
+    );
   }
 }
 

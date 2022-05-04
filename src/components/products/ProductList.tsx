@@ -10,8 +10,6 @@ import styles from "./ProductList.module.css";
 import Filter from "../filter/Filter";
 
 const ProductList: React.FC = observer(() => {
-  console.log(Store.products);
-
   const { categoryId, filterId } = useParams();
 
   // store observables init
