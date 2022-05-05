@@ -6,7 +6,6 @@ import { Product, Store } from "../../store/Store";
 
 import styles from "./ProductItem.module.css";
 import ProductParameters from "./ProductParameters";
-import CartModal from "../cart/CartModal";
 import { observer } from "mobx-react";
 import { Context } from "../../App";
 

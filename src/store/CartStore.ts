@@ -1,5 +1,4 @@
 import { makeObservable, observable, action, computed } from "mobx";
-import { StringLiteralLike } from "typescript";
 import { Product, Store } from "./Store";
 
 export interface CartItem {

@@ -152,8 +152,6 @@ export class StoreImpl {
   }
 
   filterProductsByParams(type: string | undefined) {
-    console.log(this.filterData);
-
     this.currentProducts = this.products.filter((prod) => {
       return prod.type === type;
     });

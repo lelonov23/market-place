@@ -4,8 +4,6 @@ import { observer } from "mobx-react";
 import { Card } from "react-bootstrap";
 import styles from "./CategoryItem.module.css";
 
-import { Store } from "../store/Store";
-
 interface CategoryItemProps {
   category: Category;
 }

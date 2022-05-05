@@ -11,11 +11,8 @@ const SearchPage: React.FC = observer(() => {
   if (query) {
     const res = Store.searchProducts(query);
 
-    // console.log(res);
-
     return (
       <div>
-        {/* <h1>{query}</h1> */}
         <ul>
           {res.map((cat) => {
             return (

@@ -2,11 +2,9 @@ import { observer } from "mobx-react";
 import React from "react";
 import { Store } from "../../store/Store";
 import { Form } from "react-bootstrap";
-import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 
 import styles from "./Filter.module.css";
-import Slider from "./Slider";
 
 interface Dict {
   [index: string]: any;
@@ -36,7 +34,7 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
     screenSize: "Диагональ экрана",
     laptopType: "Тип устройства",
     graphics: "Видеокарта",
-    mtrix: "Тип матрицы",
+    matrix: "Тип матрицы",
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +46,6 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
   return (
     <div className={styles.filter}>
       <h3>Фильтры</h3>
-      {/* <Slider></Slider> */}
       <ul>
         {Object.keys(opts).map((key) => {
           return (
