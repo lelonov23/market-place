@@ -1,0 +1,20 @@
+.prodList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prod {
+  margin: 1rem 1rem 1rem 0;
+}
+
+.cat {
+  margin: 1rem 0;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}

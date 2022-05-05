@@ -208,6 +208,37 @@ export class StoreImpl {
       .reduce((acc, currentProduct) => acc + currentProduct.orders, 0);
   }
 
+  searchProducts(query: string) {
+    const searchArray = this.subcategories
+      .map((cat) => {
+        const prods: Product[] = [];
+        const productsToSearch = this.products.filter(
+          (prod) => prod.categoryId === cat.id
+        );
+        productsToSearch.forEach((prod) => {
+          //search by name
+          if (prod.name.toLowerCase().includes(query.toLowerCase()))
+            prods.push(prod);
+          const params = this.params.find(
+            (param) => param.productId === prod.id
+          );
+          //search by params
+          if (params) {
+            Object.keys(params).forEach((key) => {
+              if (key !== "productId" && key !== "type") {
+                if (params[key].toLowerCase().includes(query.toLowerCase())) {
+                  if (!prods.includes(prod)) prods.push(prod);
+                }
+              }
+            });
+          }
+        });
+        return prods;
+      })
+      .filter((res) => res.length > 0);
+    return searchArray;
+  }
+
   get priceRange(): number[] {
     const priceArray = this.currentProducts.map((prod) => prod.cost);
     const rangeArray: [number, number] = [Infinity, -Infinity];

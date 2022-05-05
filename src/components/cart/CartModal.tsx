@@ -27,7 +27,14 @@ const CartModal: React.FC<CartModalProps> = observer(
 
     return (
       <Portal wrapperId="modal-container">
-        <div onClick={handleClose} className={styles.modal}>
+        <div
+          onClick={() => {
+            setActive("cart");
+            setIsOrderForm(false);
+            handleClose();
+          }}
+          className={styles.modal}
+        >
           <div
             onClick={(e) => e.stopPropagation()}
             className={styles["modal-content"]}
@@ -65,7 +72,14 @@ const CartModal: React.FC<CartModalProps> = observer(
               />
             )}
 
-            <button className={styles.close} onClick={handleClose}>
+            <button
+              className={styles.close}
+              onClick={() => {
+                setActive("cart");
+                setIsOrderForm(false);
+                handleClose();
+              }}
+            >
               <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
