@@ -2,12 +2,6 @@
 
 > Realisation of a demo marketplace using React and TypeScript
 
-![image](https://user-images.githubusercontent.com/86784174/166939518-8d196917-8bc3-480a-8097-67af15b55428.png)
-![image](https://user-images.githubusercontent.com/86784174/166939566-3aab1dd1-27e7-4430-8bd1-914f84fc394d.png)
-![image](https://user-images.githubusercontent.com/86784174/166939691-71b613bc-06b6-4039-a7b6-71f58a5c00ff.png)
-![image](https://user-images.githubusercontent.com/86784174/166939803-43e55feb-2f70-4a42-afce-d88bb73f9b33.png)
-
-
 ## Built With
 
 - TypeScript
