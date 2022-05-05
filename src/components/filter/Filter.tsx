@@ -33,6 +33,9 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
     brand: "Бренд",
     port: "Разъём",
     chargerType: "Тип устройства",
+    screenSize: "Диагональ экрана",
+    laptopType: "Тип устройства",
+    graphics: "Видеокарта",
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

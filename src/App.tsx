@@ -16,6 +16,7 @@ import products from "./json/items.json";
 import params from "./json/params.json";
 
 import { Container } from "react-bootstrap";
+import SearchPage from "./components/routes/SearchPage";
 
 type ContextType = {
   cartIsOpen: boolean;
@@ -48,6 +49,7 @@ const App: React.FC = observer(() => {
         <Container>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
             <Route path="/category/:categoryId" element={<SubcategoryList />} />
             <Route
               path="/products/:categoryId/:filterId"

@@ -1,3 +1,28 @@
 .order {
-  border-top: 1px solid rgb(185, 185, 185);
+  border: 1px solid rgb(185, 185, 185);
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+}
+
+.order header {
+  color: rgb(39, 98, 167);
+  margin-top: 1rem;
+}
+
+.order p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.order ul {
+  margin: 1rem 0;
+}
+
+.order li {
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.order li:last-child {
+  border: none;
 }

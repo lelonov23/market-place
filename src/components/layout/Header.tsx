@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,22 +14,34 @@ import CartModal from "../cart/CartModal";
 import styles from "./Header.module.css";
 import { observer } from "mobx-react";
 import { Context } from "../../App";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Header: React.FC = observer(() => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { cartIsOpen, setCartIsOpen } = React.useContext(Context);
   const navigate = useNavigate();
 
+  const searchHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    navigate(`/search?q=${e.target.value}`);
+  };
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const query = searchParams.get("q");
+
   return (
     <header className={styles.header}>
       <Container className="align-center" fluid="md">
         <Row>
           <Col className="text-center " sm={2}>
-            <Button onClick={() => navigate("/")}>
+            <Button className={styles.home} onClick={() => navigate("/")}>
               <FontAwesomeIcon icon={faHouse} />
             </Button>
-            <Button onClick={() => setIsOpen(true)} variant="primary">
+            <Button
+              className={styles.catalog}
+              onClick={() => setIsOpen(true)}
+              variant="primary"
+            >
               Каталог
             </Button>
           </Col>
@@ -40,6 +52,8 @@ const Header: React.FC = observer(() => {
                 type="text"
                 name="search"
                 id="search"
+                onChange={searchHandle}
+                value={query ? query : ""}
               />
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </div>

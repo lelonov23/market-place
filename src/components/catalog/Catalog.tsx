@@ -101,7 +101,9 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                                       onClick={handleClose}
                                       to={`/products/${subcat.id}/${filter.id}`}
                                     >
-                                      {filter.name}
+                                      <p className={styles.filterHeading}>
+                                        {filter.name}
+                                      </p>
                                     </Link>
                                   </li>
                                 );

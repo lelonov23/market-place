@@ -44,8 +44,13 @@ ul {
   color: rgb(47, 47, 47);
 }
 
-.subcatHeading:hover {
+.subcatHeading:hover,
+.filterHeading:hover {
   color: rgb(42, 129, 206);
+}
+
+.filterHeading {
+  color: rgb(47, 47, 47);
 }
 
 .cats {

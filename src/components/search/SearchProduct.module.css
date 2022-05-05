@@ -1,0 +1,25 @@
+.prod {
+  width: 16rem;
+  border: 1px solid rgb(199, 199, 199);
+  box-sizing: content-box;
+}
+
+.img {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cost {
+  font-weight: 700;
+}
+
+.info {
+  padding: 1rem;
+}
