@@ -33,7 +33,7 @@ const Header: React.FC = observer(() => {
     <header className={styles.header}>
       <Container className="align-center" fluid="md">
         <Row>
-          <Col className="text-center " sm={2}>
+          <Col className="text-center" sm={3}>
             <Button className={styles.home} onClick={() => navigate("/")}>
               <FontAwesomeIcon icon={faHouse} />
             </Button>
@@ -45,7 +45,7 @@ const Header: React.FC = observer(() => {
               Каталог
             </Button>
           </Col>
-          <Col className="text-center " sm={8}>
+          <Col className="text-center" sm={6}>
             <div className={styles.wrapper}>
               <input
                 className={styles.search}
@@ -58,7 +58,7 @@ const Header: React.FC = observer(() => {
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </div>
           </Col>
-          <Col className="text-center " sm={2}>
+          <Col className="text-center" sm={3}>
             <Button onClick={() => setCartIsOpen(true)} variant="primary">
               <FontAwesomeIcon icon={faCartShopping} />
             </Button>
