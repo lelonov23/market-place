@@ -41,6 +41,24 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
                 <li>{"Разъём: " + params.port}</li>
               </>
             )}
+
+            {params.type === "laptop" && (
+              <>
+                <li>{"Тип устройства: " + params.laptopType}</li>
+                <li>{"Диагональ экрана: " + params.screenSize}</li>
+
+                <li>{"Процессор: " + params.processor}</li>
+              </>
+            )}
+
+            {params.type === "pc" && (
+              <>
+                <li>{"Процессор: " + params.processor}</li>
+                <li>{"Видеокарта: " + params.graphics}</li>
+
+                <li>{"Операционная система: " + params.os}</li>
+              </>
+            )}
           </ul>
         </section>
       );

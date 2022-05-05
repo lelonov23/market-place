@@ -63,12 +63,8 @@ const ProductList: React.FC = observer(() => {
               );
             })}
           </ul>
-          {/* <div>
-            <div>
-              <span>{filterId && filter !== "" && filter?.name}</span>
-            </div> */}
+
           <Filter type={type}></Filter>
-          {/* </div> */}
         </div>
       </section>
     );

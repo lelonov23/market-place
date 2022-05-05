@@ -64,127 +64,127 @@
   },
   {
     "productId": 10,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "laptop",
+    "laptopType": "Ноутбук",
+    "screenSize": "16.1\"",
+    "processor": "Core i7"
   },
   {
     "productId": 11,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "laptop",
+    "laptopType": "Трансформер",
+    "screenSize": "13.3\"",
+    "processor": "Core i5"
   },
   {
     "productId": 12,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "laptop",
+    "laptopType": "Ультрабук",
+    "screenSize": "13.3\"",
+    "processor": "Core i5"
   },
   {
     "productId": 13,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "pc",
+    "processor": "Core i7",
+    "graphics": "AMD Radeon R7",
+    "os": "Windows 10"
   },
   {
     "productId": 14,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "pc",
+    "processor": "Core i5",
+    "graphics": "NVIDIA GeForce RTX 3060",
+    "os": "Windows 11"
   },
   {
     "productId": 15,
-    "type": "phone",
-    "display": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "pc",
+    "processor": "Core i7",
+    "graphics": "Intel UHD Graphics 750",
+    "os": "No OS"
   },
   {
     "productId": 16,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 17,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 18,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 19,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 20,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 21,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 22,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 23,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 24,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 25,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "iOS",
     "battery": "4500mAh"
   },
   {
     "productId": 26,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   },
   {
     "productId": 27,
     "type": "phone",
-    "display": "1920 x 800",
+    "resolution": "1920 x 800",
     "os": "Android",
     "battery": "4500mAh"
   }

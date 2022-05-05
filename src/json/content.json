@@ -11,7 +11,7 @@
   },
   {
     "id": 3,
-    "name": "Телевизоры, аудио-видео, фото",
+    "name": "test",
     "categoryId": null
   },
   {
@@ -48,31 +48,31 @@
   },
   {
     "id": 22,
-    "name": "Компьютеры и моноблоки",
+    "name": "Компьютеры",
     "type": "pc",
     "categoryId": 2
   },
   {
     "id": 23,
-    "name": "Комплектующие для ПК",
-    "type": "pc-miscellaneous",
+    "name": "Мониторы",
+    "type": "monitor",
     "categoryId": 2
   },
   {
     "id": 31,
-    "name": "Телевизоры",
+    "name": "test",
     "type": "tv",
     "categoryId": 3
   },
   {
     "id": 32,
-    "name": "Наушники",
+    "name": "test",
     "type": "headphone",
     "categoryId": 3
   },
   {
     "id": 33,
-    "name": "Видеотехника",
+    "name": "test",
     "type": "video",
     "categoryId": 3
   }

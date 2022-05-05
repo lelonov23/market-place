@@ -41,6 +41,12 @@ export interface Param {
   battery?: string;
   resolution?: string;
   processor?: string;
+  screenSize?: string;
+  laptopType?: string;
+  brand?: string;
+  port?: string;
+  chargerType?: string;
+  graphics?: string;
 }
 
 export interface Opts {

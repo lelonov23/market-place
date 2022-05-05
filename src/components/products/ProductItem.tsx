@@ -27,7 +27,6 @@ const addToCartHandle = (
 
 const ProductItem: React.FC<ProductItemProps> = observer(({ product }) => {
   const { setCartIsOpen } = React.useContext(Context);
-  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Card className={styles.productCard}>
       <div className={styles.info}>
@@ -46,7 +45,6 @@ const ProductItem: React.FC<ProductItemProps> = observer(({ product }) => {
         </Button>
         <span className={styles.price}>{product.cost}р.</span>
       </div>
-      <CartModal handleClose={() => setIsOpen(false)} isOpen={isOpen} />
     </Card>
   );
 });
