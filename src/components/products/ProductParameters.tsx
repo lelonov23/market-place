@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 
-import { Store, Product, Param } from "../../store/Store";
+import { Store, Product } from "../../store/Store";
 
 import styles from "./ProductParameters.module.css";
 

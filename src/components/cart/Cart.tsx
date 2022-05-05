@@ -61,7 +61,6 @@ const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
           <h2>Итого: {CartStore.totalPrice}</h2>
           <Button
             onClick={() => {
-              // orderHandler();
               onOrder(true);
             }}
           >
