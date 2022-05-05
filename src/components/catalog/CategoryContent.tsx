@@ -1,8 +1,8 @@
 import React from "react";
 
 interface CategoryContentProps {
-  activeCategory: number | null;
-  id: number;
+  activeCategory: number | string | null;
+  id: number | string;
 }
 
 const CategoryContent: React.FC<CategoryContentProps> = ({

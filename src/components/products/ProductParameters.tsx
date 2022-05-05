@@ -37,7 +37,6 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
               <>
                 <li>{"Тип устройства: " + params.chargerType}</li>
                 <li>{"Бренд: " + params.brand}</li>
-
                 <li>{"Разъём: " + params.port}</li>
               </>
             )}
@@ -46,7 +45,6 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
               <>
                 <li>{"Тип устройства: " + params.laptopType}</li>
                 <li>{"Диагональ экрана: " + params.screenSize}</li>
-
                 <li>{"Процессор: " + params.processor}</li>
               </>
             )}
@@ -55,8 +53,15 @@ const ProductParameters: React.FC<ProductParametersProps> = observer(
               <>
                 <li>{"Процессор: " + params.processor}</li>
                 <li>{"Видеокарта: " + params.graphics}</li>
-
                 <li>{"Операционная система: " + params.os}</li>
+              </>
+            )}
+
+            {params.type === "monitor" && (
+              <>
+                <li>{"Разрешение экрана: " + params.resolution}</li>
+                <li>{"Диагональ экрана: " + params.screenSize}</li>
+                <li>{"Тип матрицы: " + params.matrix}</li>
               </>
             )}
           </ul>

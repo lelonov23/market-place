@@ -10,10 +10,12 @@
 
 .catList {
   border-right: 2px solid rgba(0, 0, 0, 0.05);
+  padding-right: 3rem;
 }
 
 .subcatList {
   padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 ul {

@@ -1,24 +1,21 @@
 [
   {
-    "id": 1,
-    "name": "Смартфоны и гаджеты",
-    "categoryId": null
+    "id": "phones-and-gadgets",
+    "name": "Смартфоны и гаджеты"
   },
   {
-    "id": 2,
-    "name": "Ноутбуки и компьютеры",
-    "categoryId": null
+    "id": "laptops-and-pc",
+    "name": "Ноутбуки и компьютеры"
   },
   {
     "id": 3,
-    "name": "test",
-    "categoryId": null
+    "name": "test"
   },
   {
-    "id": 11,
+    "id": "phone",
     "name": "Смартфоны",
     "type": "phone",
-    "categoryId": 1,
+    "categoryId": "phones-and-gadgets",
     "filters": [
       {
         "id": 101,
@@ -29,34 +26,39 @@
     "img": "/img/phone-cat.jpg"
   },
   {
-    "id": 12,
+    "id": "tablet",
     "name": "Планшеты",
     "type": "tablet",
-    "categoryId": 1
+    "categoryId": "phones-and-gadgets",
+    "img": "/img/tablet-cat.jpg"
   },
   {
-    "id": 13,
+    "id": "charger",
     "name": "Зарядные устройства",
     "type": "charger",
-    "categoryId": 1
+    "categoryId": "phones-and-gadgets",
+    "img": "/img/charger-cat.jpg"
   },
   {
-    "id": 21,
+    "id": "laptop",
     "name": "Ноутбуки",
     "type": "laptop",
-    "categoryId": 2
+    "categoryId": "laptops-and-pc",
+    "img": "/img/laptop-cat.jpg"
   },
   {
-    "id": 22,
+    "id": "pc",
     "name": "Компьютеры",
     "type": "pc",
-    "categoryId": 2
+    "categoryId": "laptops-and-pc",
+    "img": "/img/pc-cat.jpg"
   },
   {
-    "id": 23,
+    "id": "monitor",
     "name": "Мониторы",
     "type": "monitor",
-    "categoryId": 2
+    "categoryId": "laptops-and-pc",
+    "img": "/img/monitor-cat.jpg"
   },
   {
     "id": 31,

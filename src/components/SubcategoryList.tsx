@@ -11,7 +11,7 @@ import styles from "./SubcategoryList.module.css";
 const SubcategoryList: React.FC = observer(() => {
   const { categoryId } = useParams();
   if (categoryId) {
-    const category = Store.categories.find((cat) => cat.id === +categoryId);
+    const category = Store.categories.find((cat) => cat.id === categoryId);
     if (category) {
       return (
         <section>

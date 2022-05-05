@@ -1,8 +1,15 @@
 .header {
   background-color: rgb(73, 139, 215);
   padding: 1rem 0;
-  display: flex;
+
   margin-bottom: 1.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .header button {
@@ -27,7 +34,8 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid white;
-  width: 80%;
+  width: calc(100% - 2rem);
+
   padding: 0.35rem 0;
   color: #fff;
 }
@@ -38,6 +46,7 @@
 
 .wrapper {
   color: #fff;
+  width: 50%;
 }
 
 .catalog {
@@ -47,4 +56,8 @@
 .home {
   border-radius: 0.3rem 0 0 0.3rem;
   border-right: none;
+}
+
+.cart {
+  margin-right: 1rem;
 }

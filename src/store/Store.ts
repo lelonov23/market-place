@@ -2,9 +2,9 @@ import { makeAutoObservable } from "mobx";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
-  id: number;
+  id: number | string;
   name: string;
-  categoryId: number | null;
+  categoryId?: number | string;
   type?: string;
   img?: string;
   filters?: PresetFilter[];
@@ -19,7 +19,7 @@ export interface PresetFilter {
 export interface Product {
   id: number;
   name: string;
-  categoryId: number;
+  categoryId: number | string;
   type: string;
   img: string;
   cost: number;
@@ -47,6 +47,7 @@ export interface Param {
   port?: string;
   chargerType?: string;
   graphics?: string;
+  matrix?: string;
 }
 
 export interface Opts {
@@ -208,7 +209,7 @@ export class StoreImpl {
     }
   }
 
-  getCategoryOrders(catId: number) {
+  getCategoryOrders(catId: number | string) {
     return this.products
       .filter((prod) => prod.categoryId === catId)
       .reduce((acc, currentProduct) => acc + currentProduct.orders, 0);
@@ -256,11 +257,11 @@ export class StoreImpl {
   }
 
   get mainCategories() {
-    return this.categories.filter((cat) => cat.categoryId === null);
+    return this.categories.filter((cat) => !cat.categoryId);
   }
 
   get subcategories() {
-    return this.categories.filter((cat) => cat.categoryId !== null);
+    return this.categories.filter((cat) => cat.categoryId);
   }
 
   get popularCategories() {

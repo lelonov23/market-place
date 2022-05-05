@@ -31,48 +31,48 @@ const Header: React.FC = observer(() => {
 
   return (
     <header className={styles.header}>
-      <Container className="align-center" fluid="md">
-        <Row>
-          <Col className="text-center " sm={2}>
-            <Button className={styles.home} onClick={() => navigate("/")}>
-              <FontAwesomeIcon icon={faHouse} />
-            </Button>
-            <Button
-              className={styles.catalog}
-              onClick={() => setIsOpen(true)}
-              variant="primary"
-            >
-              Каталог
-            </Button>
-          </Col>
-          <Col className="text-center " sm={8}>
-            <div className={styles.wrapper}>
-              <input
-                className={styles.search}
-                type="text"
-                name="search"
-                id="search"
-                onChange={searchHandle}
-                value={query ? query : ""}
-              />
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </div>
-          </Col>
-          <Col className="text-center " sm={2}>
-            <Button onClick={() => setCartIsOpen(true)} variant="primary">
-              <FontAwesomeIcon icon={faCartShopping} />
-            </Button>
-          </Col>
-        </Row>
-      </Container>
+      <div className={styles.container}>
+        <div>
+          <Button className={styles.home} onClick={() => navigate("/")}>
+            <FontAwesomeIcon icon={faHouse} />
+          </Button>
+          <Button
+            className={styles.catalog}
+            onClick={() => setIsOpen(true)}
+            variant="primary"
+          >
+            Каталог
+          </Button>
+        </div>
 
-      <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
-        <Catalog handleClose={() => setIsOpen(false)} />
-      </Modal>
-      <CartModal
-        handleClose={() => setCartIsOpen(false)}
-        isOpen={cartIsOpen}
-      ></CartModal>
+        <div className={styles.wrapper}>
+          <input
+            className={styles.search}
+            type="text"
+            name="search"
+            id="search"
+            onChange={searchHandle}
+            value={query ? query : ""}
+          />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+
+        <Button
+          className={styles.cart}
+          onClick={() => setCartIsOpen(true)}
+          variant="primary"
+        >
+          <FontAwesomeIcon icon={faCartShopping} />
+        </Button>
+
+        <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
+          <Catalog handleClose={() => setIsOpen(false)} />
+        </Modal>
+        <CartModal
+          handleClose={() => setCartIsOpen(false)}
+          isOpen={cartIsOpen}
+        ></CartModal>
+      </div>
     </header>
   );
 });

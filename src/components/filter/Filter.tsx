@@ -36,6 +36,7 @@ const Filter: React.FC<FilterProps> = observer(({ type }) => {
     screenSize: "Диагональ экрана",
     laptopType: "Тип устройства",
     graphics: "Видеокарта",
+    mtrix: "Тип матрицы",
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
