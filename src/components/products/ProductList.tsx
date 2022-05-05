@@ -15,7 +15,10 @@ const ProductList: React.FC = observer(() => {
   // store observables init
   const products = Store.currentProducts;
   const cat =
-    categoryId && Store.subcategories.find((cat) => cat.id === +categoryId);
+    categoryId &&
+    Store.subcategories.find(
+      (cat) => cat.id === categoryId || cat.id === +categoryId
+    );
   const type = cat !== "" && cat?.type;
 
   // preset filter init
@@ -23,12 +26,14 @@ const ProductList: React.FC = observer(() => {
     categoryId &&
     filterId &&
     Store.subcategories
-      .find((cat) => cat.id === +categoryId)
+      .find((cat) => cat.id === categoryId || cat.id === +categoryId)
       ?.filters?.find((filter) => filter.id === +filterId);
 
   React.useEffect(() => {
     if (categoryId) {
-      const type = Store.categories.find((cat) => cat.id === +categoryId)?.type;
+      const type = Store.categories.find(
+        (cat) => cat.id === categoryId || cat.id === +categoryId
+      )?.type;
       if (type) Store.filterProducts(type);
     }
   }, [categoryId, filterId]);
@@ -45,7 +50,9 @@ const ProductList: React.FC = observer(() => {
   if (categoryId && products && type) {
     // category filter apply
 
-    const subcategory = Store.subcategories.find((c) => c.id === +categoryId);
+    const subcategory = Store.subcategories.find(
+      (c) => c.id === categoryId || c.id === +categoryId
+    );
     return (
       <section>
         <h1>
@@ -64,7 +71,7 @@ const ProductList: React.FC = observer(() => {
             })}
           </ul>
 
-          <Filter type={type}></Filter>
+          {!filterId && <Filter type={type}></Filter>}
         </div>
       </section>
     );

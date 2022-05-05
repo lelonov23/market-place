@@ -106,31 +106,31 @@
   },
   {
     "productId": 16,
-    "type": "phone",
-    "resolution": "1920 x 800",
-    "os": "iOS",
-    "battery": "4500mAh"
+    "type": "monitor",
+    "resolution": "2560 x 1440",
+    "screenSize": "28\"",
+    "matrix": "OLED"
   },
   {
     "productId": 17,
-    "type": "phone",
-    "resolution": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "type": "monitor",
+    "resolution": "2560 x 1440",
+    "screenSize": "23.8\"",
+    "matrix": "IPS"
   },
   {
     "productId": 18,
-    "type": "phone",
+    "type": "monitor",
     "resolution": "1920 x 800",
-    "os": "Android",
-    "battery": "4500mAh"
+    "screenSize": "27\"",
+    "matrix": "IPS"
   },
   {
     "productId": 19,
     "type": "phone",
     "resolution": "1920 x 800",
     "os": "iOS",
-    "battery": "4500mAh"
+    "battery": "3600mAh"
   },
   {
     "productId": 20,

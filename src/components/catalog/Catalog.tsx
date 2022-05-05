@@ -16,15 +16,15 @@ interface CatalogProps {
 }
 
 const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
-  const [activeCategory, setActiveCategory] = React.useState<number | null>(
-    null
-  );
+  const [activeCategory, setActiveCategory] = React.useState<
+    number | string | null
+  >(null);
 
-  const handleOpenCategory = (id: number) => {
+  const handleOpenCategory = (id: number | string) => {
     setActiveCategory(id);
   };
 
-  const handleOpenCategoryPage = (catId: number) => {
+  const handleOpenCategoryPage = (catId: number | string) => {
     navigate(`/category/${catId}`);
     handleClose();
   };

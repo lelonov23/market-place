@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Samsung Galaxy S20",
-    "categoryId": 11,
+    "categoryId": "phone",
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 106990,
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "Apple iPhone 13",
-    "categoryId": 11,
+    "categoryId": "phone",
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 119990,
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Xiaomi 11X",
-    "categoryId": 11,
+    "categoryId": "phone",
     "img": "/img/phone.jpg",
     "type": "phone",
     "cost": 84990,
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "DEXP P200",
-    "categoryId": 12,
+    "categoryId": "tablet",
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 16790,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Apple iPad (2018)",
-    "categoryId": 12,
+    "categoryId": "tablet",
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 35990,
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Samsung Galaxy Tab S8",
-    "categoryId": 12,
+    "categoryId": "tablet",
     "img": "/img/phone.jpg",
     "type": "tablet",
     "cost": 78990,
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "name": "Сетевое зарядное устройство Xiaomi Mi 65W",
-    "categoryId": 13,
+    "categoryId": "charger",
     "img": "/img/phone.jpg",
     "type": "charger",
     "cost": 3190,
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "name": "Сетевое зарядное устройство Buro TJ-248W QC 3.0",
-    "categoryId": 13,
+    "categoryId": "charger",
     "img": "/img/phone.jpg",
     "type": "charger",
     "cost": 490,
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "Сетевое зарядное устройство Digma DGPD-18W-WG",
-    "categoryId": 13,
+    "categoryId": "charger",
     "img": "https://cdn.citilink.ru/oemLM_Gj5K3o70kOgFUD0XPz7rUrfQYIltyjHDYH_lA/fit/400/400/ce/false/plain/items/1079233_v01_m.jpg",
     "type": "charger",
     "cost": 1000,
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "name": "Huawei MateBook D 15, 53012KQY",
-    "categoryId": 21,
+    "categoryId": "laptop",
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 48990,
@@ -102,7 +102,7 @@
   {
     "id": 11,
     "name": "Lenovo IP Gaming 3 15ACH6, 82K201D1RK",
-    "categoryId": 21,
+    "categoryId": "laptop",
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 83990,
@@ -112,7 +112,7 @@
   {
     "id": 12,
     "name": "Acer Aspire 3 A315-56-38MN, NX.HS5ER.00B",
-    "categoryId": 21,
+    "categoryId": "laptop",
     "img": "/img/phone.jpg",
     "type": "laptop",
     "cost": 34990,
@@ -122,7 +122,7 @@
   {
     "id": 13,
     "name": "MSI Trident A 11TC-2238XRU",
-    "categoryId": 22,
+    "categoryId": "pc",
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 117990,
@@ -132,7 +132,7 @@
   {
     "id": 14,
     "name": "Acer Aspire XC-1660",
-    "categoryId": 22,
+    "categoryId": "pc",
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 55590,
@@ -142,7 +142,7 @@
   {
     "id": 15,
     "name": "iRU Home 310H5SE",
-    "categoryId": 22,
+    "categoryId": "pc",
     "img": "/img/phone.jpg",
     "type": "pc",
     "cost": 36390,
@@ -152,7 +152,7 @@
   {
     "id": 16,
     "name": "Acer KG282Kbmiipx 28\"",
-    "categoryId": 23,
+    "categoryId": "monitor",
     "img": "/img/phone.jpg",
     "type": "monitor",
     "cost": 25990,
@@ -162,7 +162,7 @@
   {
     "id": 17,
     "name": "LG UltraGear 24GN650-B 23.8\"",
-    "categoryId": 23,
+    "categoryId": "monitor",
     "img": "/img/phone.jpg",
     "type": "monitor",
     "cost": 20490,
@@ -172,7 +172,7 @@
   {
     "id": 18,
     "name": "LG 27MK430H-B 27\"",
-    "categoryId": 23,
+    "categoryId": "monitor",
     "img": "/img/phone.jpg",
     "type": "monitor",
     "cost": 18990,
