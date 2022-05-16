@@ -11,7 +11,9 @@ interface ProductParametersProps {
 
 const ProductParameters: React.FC<ProductParametersProps> = observer(
   ({ product }) => {
-    const params = Store.params.find((param) => param.productId === product.id);
+    const params = Store.params.find(
+      (param) => param.productId === product._id
+    );
     if (params) {
       return (
         <section className={styles.paramList}>

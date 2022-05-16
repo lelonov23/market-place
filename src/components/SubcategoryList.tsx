@@ -11,18 +11,18 @@ import styles from "./SubcategoryList.module.css";
 const SubcategoryList: React.FC = observer(() => {
   const { categoryId } = useParams();
   if (categoryId) {
-    const category = Store.categories.find((cat) => cat.id === categoryId);
+    const category = Store.categories.find((cat) => cat._id === categoryId);
     if (category) {
       return (
         <section>
           <h1>{category.name}</h1>
           <ul className={styles.list}>
             {Store.subcategories
-              .filter((subcat) => subcat.categoryId === category?.id)
+              .filter((subcat) => subcat.categoryId === category?._id)
               .map((subcat) => {
                 return (
-                  <li className={styles.subcat} key={subcat.id}>
-                    <Link to={`/products/${subcat.id}`}>
+                  <li className={styles.subcat} key={subcat._id}>
+                    <Link to={`/products/${subcat._id}`}>
                       <CategoryItem category={subcat} />
                     </Link>
                   </li>

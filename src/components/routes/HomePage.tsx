@@ -14,8 +14,8 @@ const HomePage: React.FC = observer(() => {
       <ul className={styles.categoryList}>
         {Store.popularCategories.map((category) => {
           return (
-            <li className={styles.categoryItem} key={category.id}>
-              <Link to={`/products/${category.id}`}>
+            <li className={styles.categoryItem} key={category._id}>
+              <Link to={`/products/${category._id}`}>
                 <CategoryItem category={category} />
               </Link>
             </li>

@@ -30,7 +30,7 @@ export const Context = React.createContext<ContextType>({
 
 const App: React.FC = observer(() => {
   React.useEffect(() => {
-    Store.setCategories(categories);
+    Store.setCategories();
     Store.setProducts(products);
     Store.setParams(params);
   }, []);

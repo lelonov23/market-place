@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "name": "Samsung Galaxy S20",
     "categoryId": "phone",
     "img": "/img/phone.jpg",
@@ -10,7 +10,7 @@
     "orders": 0
   },
   {
-    "id": 2,
+    "_id": 2,
     "name": "Apple iPhone 13",
     "categoryId": "phone",
     "img": "/img/phone.jpg",
@@ -20,7 +20,7 @@
     "orders": 0
   },
   {
-    "id": 3,
+    "_id": 3,
     "name": "Xiaomi 11X",
     "categoryId": "phone",
     "img": "/img/phone.jpg",
@@ -30,7 +30,7 @@
     "orders": 0
   },
   {
-    "id": 4,
+    "_id": 4,
     "name": "DEXP P200",
     "categoryId": "tablet",
     "img": "/img/phone.jpg",
@@ -40,7 +40,7 @@
     "orders": 0
   },
   {
-    "id": 5,
+    "_id": 5,
     "name": "Apple iPad (2018)",
     "categoryId": "tablet",
     "img": "/img/phone.jpg",
@@ -50,7 +50,7 @@
     "orders": 0
   },
   {
-    "id": 6,
+    "_id": 6,
     "name": "Samsung Galaxy Tab S8",
     "categoryId": "tablet",
     "img": "/img/phone.jpg",
@@ -60,7 +60,7 @@
     "orders": 0
   },
   {
-    "id": 7,
+    "_id": 7,
     "name": "Сетевое зарядное устройство Xiaomi Mi 65W",
     "categoryId": "charger",
     "img": "/img/phone.jpg",
@@ -70,7 +70,7 @@
     "orders": 0
   },
   {
-    "id": 8,
+    "_id": 8,
     "name": "Сетевое зарядное устройство Buro TJ-248W QC 3.0",
     "categoryId": "charger",
     "img": "/img/phone.jpg",
@@ -80,7 +80,7 @@
     "orders": 0
   },
   {
-    "id": 9,
+    "_id": 9,
     "name": "Сетевое зарядное устройство Digma DGPD-18W-WG",
     "categoryId": "charger",
     "img": "https://cdn.citilink.ru/oemLM_Gj5K3o70kOgFUD0XPz7rUrfQYIltyjHDYH_lA/fit/400/400/ce/false/plain/items/1079233_v01_m.jpg",
@@ -90,7 +90,7 @@
     "orders": 0
   },
   {
-    "id": 10,
+    "_id": 10,
     "name": "Huawei MateBook D 15, 53012KQY",
     "categoryId": "laptop",
     "img": "/img/phone.jpg",
@@ -100,7 +100,7 @@
     "orders": 0
   },
   {
-    "id": 11,
+    "_id": 11,
     "name": "Lenovo IP Gaming 3 15ACH6, 82K201D1RK",
     "categoryId": "laptop",
     "img": "/img/phone.jpg",
@@ -110,7 +110,7 @@
     "orders": 0
   },
   {
-    "id": 12,
+    "_id": 12,
     "name": "Acer Aspire 3 A315-56-38MN, NX.HS5ER.00B",
     "categoryId": "laptop",
     "img": "/img/phone.jpg",
@@ -120,7 +120,7 @@
     "orders": 0
   },
   {
-    "id": 13,
+    "_id": 13,
     "name": "MSI Trident A 11TC-2238XRU",
     "categoryId": "pc",
     "img": "/img/phone.jpg",
@@ -130,7 +130,7 @@
     "orders": 0
   },
   {
-    "id": 14,
+    "_id": 14,
     "name": "Acer Aspire XC-1660",
     "categoryId": "pc",
     "img": "/img/phone.jpg",
@@ -140,7 +140,7 @@
     "orders": 0
   },
   {
-    "id": 15,
+    "_id": 15,
     "name": "iRU Home 310H5SE",
     "categoryId": "pc",
     "img": "/img/phone.jpg",
@@ -150,7 +150,7 @@
     "orders": 0
   },
   {
-    "id": 16,
+    "_id": 16,
     "name": "Acer KG282Kbmiipx 28\"",
     "categoryId": "monitor",
     "img": "/img/phone.jpg",
@@ -160,7 +160,7 @@
     "orders": 0
   },
   {
-    "id": 17,
+    "_id": 17,
     "name": "LG UltraGear 24GN650-B 23.8\"",
     "categoryId": "monitor",
     "img": "/img/phone.jpg",
@@ -170,7 +170,7 @@
     "orders": 0
   },
   {
-    "id": 18,
+    "_id": 18,
     "name": "LG 27MK430H-B 27\"",
     "categoryId": "monitor",
     "img": "/img/phone.jpg",
@@ -180,7 +180,7 @@
     "orders": 0
   },
   {
-    "id": 19,
+    "_id": 19,
     "name": "Item 19",
     "categoryId": 31,
     "img": "/img/phone.jpg",
@@ -190,7 +190,7 @@
     "orders": 0
   },
   {
-    "id": 20,
+    "_id": 20,
     "name": "Item 20",
     "categoryId": 31,
     "img": "/img/phone.jpg",
@@ -200,7 +200,7 @@
     "orders": 0
   },
   {
-    "id": 21,
+    "_id": 21,
     "name": "Item 21",
     "categoryId": 31,
     "img": "/img/phone.jpg",
@@ -210,7 +210,7 @@
     "orders": 0
   },
   {
-    "id": 22,
+    "_id": 22,
     "name": "Item 22",
     "categoryId": 32,
     "img": "/img/phone.jpg",
@@ -220,7 +220,7 @@
     "orders": 0
   },
   {
-    "id": 23,
+    "_id": 23,
     "name": "Item 23",
     "categoryId": 32,
     "img": "/img/phone.jpg",
@@ -230,7 +230,7 @@
     "orders": 0
   },
   {
-    "id": 24,
+    "_id": 24,
     "name": "Item 24",
     "categoryId": 32,
     "img": "/img/phone.jpg",
@@ -240,7 +240,7 @@
     "orders": 0
   },
   {
-    "id": 25,
+    "_id": 25,
     "name": "Item 25",
     "categoryId": 33,
     "img": "/img/phone.jpg",
@@ -250,7 +250,7 @@
     "orders": 0
   },
   {
-    "id": 26,
+    "_id": 26,
     "name": "Item 26",
     "categoryId": 33,
     "img": "/img/phone.jpg",
@@ -260,7 +260,7 @@
     "orders": 0
   },
   {
-    "id": 27,
+    "_id": 27,
     "name": "Item 27",
     "categoryId": 33,
     "img": "/img/phone.jpg",

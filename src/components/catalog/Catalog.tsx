@@ -20,8 +20,8 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
     number | string | null
   >(null);
 
-  const handleOpenCategory = (id: number | string) => {
-    setActiveCategory(id);
+  const handleOpenCategory = (_id: number | string) => {
+    setActiveCategory(_id);
   };
 
   const handleOpenCategoryPage = (catId: number | string) => {
@@ -39,18 +39,18 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
           {Store.mainCategories.map((category) => {
             return (
               <li
-                key={category.id}
-                onMouseEnter={() => handleOpenCategory(category.id)}
-                onClick={() => handleOpenCategoryPage(category.id)}
+                key={category._id}
+                onMouseEnter={() => handleOpenCategory(category._id)}
+                onClick={() => handleOpenCategoryPage(category._id)}
                 className={
-                  activeCategory === category.id
+                  activeCategory === category._id
                     ? `${styles.active} ${styles.categoryLink}`
                     : styles.categoryLink
                 }
               >
                 <p>
                   {category.name}
-                  {activeCategory === category.id ? (
+                  {activeCategory === category._id ? (
                     <FontAwesomeIcon icon={faArrowRightLong} />
                   ) : (
                     ""
@@ -66,7 +66,7 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
         <h2>
           {
             Store.mainCategories.find(
-              (category) => category.id === activeCategory
+              (category) => category._id === activeCategory
             )?.name
           }
         </h2>
@@ -74,19 +74,19 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
           {Store.mainCategories.map((category) => {
             return (
               <CategoryContent
-                key={category.id}
+                key={category._id}
                 activeCategory={activeCategory}
-                id={category.id}
+                id={category._id}
               >
                 <ul className={styles.subcats}>
                   {Store.subcategories
-                    .filter((subcat) => subcat.categoryId === category?.id)
+                    .filter((subcat) => subcat.categoryId === category?._id)
                     .map((subcat) => {
                       return (
-                        <li key={subcat.id}>
+                        <li key={subcat._id}>
                           <Link
                             onClick={handleClose}
-                            to={`/products/${subcat.id}`}
+                            to={`/products/${subcat._id}`}
                           >
                             <p className={styles.subcatHeading}>
                               {subcat.name}
@@ -96,10 +96,10 @@ const Catalog: React.FC<CatalogProps> = observer(({ handleClose }) => {
                             {subcat.filters?.length &&
                               subcat.filters.map((filter) => {
                                 return (
-                                  <li key={filter.id}>
+                                  <li key={filter._id}>
                                     <Link
                                       onClick={handleClose}
-                                      to={`/products/${subcat.id}/${filter.id}`}
+                                      to={`/products/${subcat._id}/${filter._id}`}
                                     >
                                       <p className={styles.filterHeading}>
                                         {filter.name}

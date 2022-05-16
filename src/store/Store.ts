@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
-  id: number | string;
+  _id: number | string;
   name: string;
   categoryId?: number | string;
   type?: string;
@@ -11,13 +11,13 @@ export interface Category {
 }
 
 export interface PresetFilter {
-  id: number;
+  _id: string;
   name: string;
   filters: FilterData[];
 }
 
 export interface Product {
-  id: number;
+  _id: number;
   name: string;
   categoryId: number | string;
   type: string;
@@ -66,8 +66,23 @@ export class StoreImpl {
     makeAutoObservable(this);
   }
 
-  setCategories(categories: Category[]) {
-    this.categories = categories;
+  //categories: Category[]
+  async setCategories() {
+    const res = await fetch("http://localhost:3030/categories");
+    const categories = await res.json();
+    const cats: Category[] = categories.map((cat: any) => {
+      const newCat: Category = {
+        _id: cat._id,
+        name: cat.name,
+      };
+      if (cat.categoryId) newCat.categoryId = cat.categoryId;
+      if (cat.type) newCat.type = cat.type;
+      if (cat.img) newCat.img = cat.img;
+      if (cat.filters && cat.filters.length > 0) newCat.filters = cat.filters;
+      return newCat;
+    });
+    console.log(cats);
+    this.categories = cats;
   }
 
   setProducts(products: Product[]) {
@@ -91,7 +106,7 @@ export class StoreImpl {
 
     const opts: Opts = {};
     this.currentProducts.forEach((prod) => {
-      const param = Store.params.find((param) => param.productId === prod.id);
+      const param = Store.params.find((param) => param.productId === prod._id);
       if (param)
         Object.keys(param).forEach((key) => {
           if (opts[key] && !opts[key].includes(param[key])) {
@@ -164,7 +179,7 @@ export class StoreImpl {
       this.filterData.forEach((opt) => {
         this.currentProducts = this.currentProducts.filter((prod) => {
           const paramList = this.params.find(
-            (param) => param.productId === prod.id
+            (param) => param.productId === prod._id
           );
 
           if (paramList) {
@@ -178,11 +193,11 @@ export class StoreImpl {
   }
 
   changeStock(prodId: number | undefined, payload: number) {
-    const foundProd = this.products.find((prod) => prod.id === prodId);
+    const foundProd = this.products.find((prod) => prod._id === prodId);
     if (foundProd) {
       foundProd.stock += payload;
       this.products = this.products.map((prod) => {
-        if (prod.id === prodId) {
+        if (prod._id === prodId) {
           return foundProd;
         } else return prod;
       });
@@ -190,18 +205,18 @@ export class StoreImpl {
   }
 
   getItemStock(prodId: number): number {
-    const foundProd = this.products.find((prod) => prod.id === prodId);
+    const foundProd = this.products.find((prod) => prod._id === prodId);
     if (foundProd && foundProd.stock) return foundProd.stock;
     else return 0;
   }
 
-  changeOrderCount(id: number, value: number) {
-    const product = this.products.find((prod) => prod.id === id);
+  changeOrderCount(_id: number, value: number) {
+    const product = this.products.find((prod) => prod._id === _id);
 
     if (product) {
       const newProduct = { ...product, orders: product.orders + value };
       this.products = this.products.map((prod) => {
-        if (prod.id === id) return newProduct;
+        if (prod._id === _id) return newProduct;
         else return prod;
       });
     }
@@ -218,14 +233,14 @@ export class StoreImpl {
       .map((cat) => {
         const prods: Product[] = [];
         const productsToSearch = this.products.filter(
-          (prod) => prod.categoryId === cat.id
+          (prod) => prod.categoryId === cat._id
         );
         productsToSearch.forEach((prod) => {
           //search by name
           if (prod.name.toLowerCase().includes(query.toLowerCase()))
             prods.push(prod);
           const params = this.params.find(
-            (param) => param.productId === prod.id
+            (param) => param.productId === prod._id
           );
           //search by params
           if (params) {
@@ -264,7 +279,7 @@ export class StoreImpl {
 
   get popularCategories() {
     return this.subcategories.sort(
-      (a, b) => this.getCategoryOrders(b.id) - this.getCategoryOrders(a.id)
+      (a, b) => this.getCategoryOrders(b._id) - this.getCategoryOrders(a._id)
     );
   }
 }

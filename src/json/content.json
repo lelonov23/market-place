@@ -1,24 +1,24 @@
 [
   {
-    "id": "phones-and-gadgets",
+    "_id": "phones-and-gadgets",
     "name": "Смартфоны и гаджеты"
   },
   {
-    "id": "laptops-and-pc",
+    "_id": "laptops-and-pc",
     "name": "Ноутбуки и компьютеры"
   },
   {
-    "id": 3,
+    "_id": 3,
     "name": "test"
   },
   {
-    "id": "phone",
+    "_id": "phone",
     "name": "Смартфоны",
     "type": "phone",
     "categoryId": "phones-and-gadgets",
     "filters": [
       {
-        "id": 101,
+        "_id": "phone-apple",
         "name": "Смартфоны Apple",
         "filters": [{ "name": "os", "value": ["iOS"] }]
       }
@@ -26,54 +26,54 @@
     "img": "/img/phone-cat.jpg"
   },
   {
-    "id": "tablet",
+    "_id": "tablet",
     "name": "Планшеты",
     "type": "tablet",
     "categoryId": "phones-and-gadgets",
     "img": "/img/tablet-cat.jpg"
   },
   {
-    "id": "charger",
+    "_id": "charger",
     "name": "Зарядные устройства",
     "type": "charger",
     "categoryId": "phones-and-gadgets",
     "img": "/img/charger-cat.jpg"
   },
   {
-    "id": "laptop",
+    "_id": "laptop",
     "name": "Ноутбуки",
     "type": "laptop",
     "categoryId": "laptops-and-pc",
     "img": "/img/laptop-cat.jpg"
   },
   {
-    "id": "pc",
+    "_id": "pc",
     "name": "Компьютеры",
     "type": "pc",
     "categoryId": "laptops-and-pc",
     "img": "/img/pc-cat.jpg"
   },
   {
-    "id": "monitor",
+    "_id": "monitor",
     "name": "Мониторы",
     "type": "monitor",
     "categoryId": "laptops-and-pc",
     "img": "/img/monitor-cat.jpg"
   },
   {
-    "id": 31,
+    "_id": 31,
     "name": "test",
     "type": "tv",
     "categoryId": 3
   },
   {
-    "id": 32,
+    "_id": 32,
     "name": "test",
     "type": "headphone",
     "categoryId": 3
   },
   {
-    "id": 33,
+    "_id": 33,
     "name": "test",
     "type": "video",
     "categoryId": 3

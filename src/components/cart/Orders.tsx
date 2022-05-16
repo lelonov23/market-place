@@ -11,7 +11,7 @@ const Orders: React.FC = observer(() => {
         <ul>
           {CartStore.orders.map((order) => {
             return (
-              <li key={order.id}>
+              <li key={order._id}>
                 <OrderItem order={order} />
               </li>
             );

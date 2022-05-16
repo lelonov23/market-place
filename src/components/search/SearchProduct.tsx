@@ -14,10 +14,10 @@ const addToCartHandle = (
   product: Product,
   setCartIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  if (CartStore.items.find((item) => item.product.id === product.id))
+  if (CartStore.items.find((item) => item.product._id === product._id))
     CartStore.addExistingItem(product);
   else CartStore.addNewItem(product);
-  const stock = Store.getItemStock(product.id);
+  const stock = Store.getItemStock(product._id);
   if (stock > 0) setCartIsOpen(true);
 };
 
@@ -32,10 +32,10 @@ const SearchProduct: React.FC<SearchProductProps> = ({ prod }) => {
         <div className={styles.controls}>
           <span className={styles.cost}>{prod.cost}р.</span>
           <Button
-            disabled={Store.getItemStock(prod.id) === 0}
+            disabled={Store.getItemStock(prod._id) === 0}
             onClick={() => addToCartHandle(prod, setCartIsOpen)}
           >
-            {Store.getItemStock(prod.id) === 0 ? "Нет в наличии" : "В корзину"}
+            {Store.getItemStock(prod._id) === 0 ? "Нет в наличии" : "В корзину"}
           </Button>
         </div>
       </div>

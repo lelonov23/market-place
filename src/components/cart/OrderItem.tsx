@@ -12,14 +12,14 @@ const OrderItem: React.FC<OrderProps> = observer(({ order }) => {
   return (
     <div className={styles.order}>
       <header>
-        <h3>{order.id}</h3>
+        <h3>{order._id}</h3>
         <p>{order.name}</p>
       </header>
 
       <ul>
         {order.items.map((item) => {
           return (
-            <li key={item.id}>
+            <li key={item._id}>
               <h4>{item.product.name}</h4>
               <span>Кол-во: {item.count}</span>
             </li>

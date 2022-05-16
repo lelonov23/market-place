@@ -34,7 +34,7 @@ const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
           {items &&
             items.map((item) => {
               return (
-                <li key={item.id} className={styles.item}>
+                <li key={item._id} className={styles.item}>
                   <h3>{item.product.name}</h3>
                   <div className={styles.countControl}>
                     <Button onClick={() => removeItemHandler(item.product)}>

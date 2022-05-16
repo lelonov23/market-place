@@ -17,7 +17,7 @@ const ProductList: React.FC = observer(() => {
   const cat =
     categoryId &&
     Store.subcategories.find(
-      (cat) => cat.id === categoryId || cat.id === +categoryId
+      (cat) => cat._id === categoryId || cat._id === +categoryId
     );
   const type = cat !== "" && cat?.type;
 
@@ -26,13 +26,13 @@ const ProductList: React.FC = observer(() => {
     categoryId &&
     filterId &&
     Store.subcategories
-      .find((cat) => cat.id === categoryId || cat.id === +categoryId)
-      ?.filters?.find((filter) => filter.id === +filterId);
+      .find((cat) => cat._id === categoryId || cat._id === +categoryId)
+      ?.filters?.find((filter) => filter._id === filterId);
 
   React.useEffect(() => {
     if (categoryId) {
       const type = Store.categories.find(
-        (cat) => cat.id === categoryId || cat.id === +categoryId
+        (cat) => cat._id === categoryId || cat._id === +categoryId
       )?.type;
       if (type) Store.filterProducts(type);
     }
@@ -51,7 +51,7 @@ const ProductList: React.FC = observer(() => {
     // category filter apply
 
     const subcategory = Store.subcategories.find(
-      (c) => c.id === categoryId || c.id === +categoryId
+      (c) => c._id === categoryId || c._id === +categoryId
     );
     return (
       <section>
@@ -64,7 +64,7 @@ const ProductList: React.FC = observer(() => {
           <ul className={styles.list}>
             {products.map((product) => {
               return (
-                <li className={styles.product} key={product.id}>
+                <li className={styles.product} key={product._id}>
                   <ProductItem product={product} />
                 </li>
               );

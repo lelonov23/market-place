@@ -14,7 +14,7 @@ interface SearchCategoryProps {
 const SearchCategory: React.FC<SearchCategoryProps> = observer(
   ({ cat, query }) => {
     const catName = Store.subcategories.find(
-      (category) => cat[0].categoryId === category.id
+      (category) => cat[0].categoryId === category._id
     )?.name;
 
     return (
@@ -23,7 +23,7 @@ const SearchCategory: React.FC<SearchCategoryProps> = observer(
         <ul className={styles.prodList}>
           {cat.map((prod) => {
             return (
-              <li className={styles.prod} key={prod.id}>
+              <li className={styles.prod} key={prod._id}>
                 <SearchProduct prod={prod} />
               </li>
             );
