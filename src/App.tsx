@@ -30,8 +30,8 @@ export const Context = React.createContext<ContextType>({
 
 const App: React.FC = observer(() => {
   React.useEffect(() => {
-    Store.setCategories(categories);
-    Store.setProducts(products);
+    Store.setCategories();
+    Store.setProducts();
     Store.setParams(params);
   }, []);
 
@@ -46,18 +46,23 @@ const App: React.FC = observer(() => {
         }}
       >
         <Header />
-        <Container>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/category/:categoryId" element={<SubcategoryList />} />
-            <Route
-              path="/products/:categoryId/:filterId"
-              element={<ProductList />}
-            />
-            <Route path="/products/:categoryId" element={<ProductList />} />
-          </Routes>
-        </Container>
+        {Store.isLoaded && (
+          <Container>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route
+                path="/category/:categoryId"
+                element={<SubcategoryList />}
+              />
+              <Route
+                path="/products/:categoryId/:filterId"
+                element={<ProductList />}
+              />
+              <Route path="/products/:categoryId" element={<ProductList />} />
+            </Routes>
+          </Container>
+        )}
       </Context.Provider>
     </div>
   );
