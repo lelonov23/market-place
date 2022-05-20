@@ -74,24 +74,34 @@ export class StoreImpl {
     );
   }
 
-  async fetchCategories() {}
-
-  // categories: Category[]
   async setCategories() {
-    const res = await fetch("http://localhost:3030/categories");
-    const categories = await res.json();
-    runInAction(() => (this.categories = categories));
+    try {
+      const res = await fetch("http://localhost:3030/categories");
+      const categories = await res.json();
+      runInAction(() => (this.categories = categories));
+    } catch (error) {
+      runInAction(() => (this.categories = []));
+    }
   }
 
-  //products: Product[]
   async setProducts() {
-    const res = await fetch("http://localhost:3030/products");
-    const products = await res.json();
-    runInAction(() => (this.products = products));
+    try {
+      const res = await fetch("http://localhost:3030/products");
+      const products = await res.json();
+      runInAction(() => (this.products = products));
+    } catch (error) {
+      runInAction(() => (this.products = []));
+    }
   }
 
-  setParams(params: Param[]) {
-    this.params = params;
+  async setParams() {
+    try {
+      const res = await fetch("http://localhost:3030/params");
+      const params = await res.json();
+      runInAction(() => (this.params = params));
+    } catch (error) {
+      runInAction(() => (this.params = []));
+    }
   }
 
   setFilterOptions(opts: { [index: string]: any }) {

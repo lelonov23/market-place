@@ -11,9 +11,9 @@ import HomePage from "./components/routes/HomePage";
 import SubcategoryList from "./components/SubcategoryList";
 import ProductList from "./components/products/ProductList";
 
-import categories from "./json/content.json";
-import products from "./json/items.json";
-import params from "./json/params.json";
+// import categories from "./json/content.json";
+// import products from "./json/items.json";
+// import params from "./json/params.json";
 
 import { Container } from "react-bootstrap";
 import SearchPage from "./components/routes/SearchPage";
@@ -32,7 +32,7 @@ const App: React.FC = observer(() => {
   React.useEffect(() => {
     Store.setCategories();
     Store.setProducts();
-    Store.setParams(params);
+    Store.setParams();
   }, []);
 
   const [cartIsOpen, setCartIsOpen] = React.useState<boolean>(false);
