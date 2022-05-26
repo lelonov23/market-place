@@ -76,7 +76,7 @@ export class StoreImpl {
 
   async setCategories() {
     try {
-      const res = await fetch("http://localhost:3030/categories");
+      const res = await fetch("http://localhost:5000/categories");
       const categories = await res.json();
       runInAction(() => (this.categories = categories));
     } catch (error) {
@@ -86,7 +86,7 @@ export class StoreImpl {
 
   async setProducts() {
     try {
-      const res = await fetch("http://localhost:3030/products");
+      const res = await fetch("http://localhost:5000/products");
       const products = await res.json();
       runInAction(() => (this.products = products));
     } catch (error) {
@@ -96,7 +96,7 @@ export class StoreImpl {
 
   async setParams() {
     try {
-      const res = await fetch("http://localhost:3030/params");
+      const res = await fetch("http://localhost:5000/params");
       const params = await res.json();
       runInAction(() => (this.params = params));
     } catch (error) {
