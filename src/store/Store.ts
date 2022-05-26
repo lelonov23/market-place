@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, action, runInAction } from "mobx";
 import { FOpts } from "../components/filter/Filter";
 
 export interface Category {
@@ -66,16 +66,42 @@ export class StoreImpl {
     makeAutoObservable(this);
   }
 
-  setCategories(categories: Category[]) {
-    this.categories = categories;
+  get isLoaded(): boolean {
+    return (
+      this.categories.length > 0 &&
+      this.products.length > 0 &&
+      this.params.length > 0
+    );
   }
 
-  setProducts(products: Product[]) {
-    this.products = products;
+  async setCategories() {
+    try {
+      const res = await fetch("http://localhost:5000/categories");
+      const categories = await res.json();
+      runInAction(() => (this.categories = categories));
+    } catch (error) {
+      runInAction(() => (this.categories = []));
+    }
   }
 
-  setParams(params: Param[]) {
-    this.params = params;
+  async setProducts() {
+    try {
+      const res = await fetch("http://localhost:5000/products");
+      const products = await res.json();
+      runInAction(() => (this.products = products));
+    } catch (error) {
+      runInAction(() => (this.products = []));
+    }
+  }
+
+  async setParams() {
+    try {
+      const res = await fetch("http://localhost:5000/params");
+      const params = await res.json();
+      runInAction(() => (this.params = params));
+    } catch (error) {
+      runInAction(() => (this.params = []));
+    }
   }
 
   setFilterOptions(opts: { [index: string]: any }) {

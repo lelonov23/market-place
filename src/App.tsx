@@ -11,10 +11,6 @@ import HomePage from "./components/routes/HomePage";
 import SubcategoryList from "./components/SubcategoryList";
 import ProductList from "./components/products/ProductList";
 
-import categories from "./json/content.json";
-import products from "./json/items.json";
-import params from "./json/params.json";
-
 import { Container } from "react-bootstrap";
 import SearchPage from "./components/routes/SearchPage";
 
@@ -30,9 +26,9 @@ export const Context = React.createContext<ContextType>({
 
 const App: React.FC = observer(() => {
   React.useEffect(() => {
-    Store.setCategories(categories);
-    Store.setProducts(products);
-    Store.setParams(params);
+    Store.setCategories();
+    Store.setProducts();
+    Store.setParams();
   }, []);
 
   const [cartIsOpen, setCartIsOpen] = React.useState<boolean>(false);
@@ -46,18 +42,23 @@ const App: React.FC = observer(() => {
         }}
       >
         <Header />
-        <Container>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/category/:categoryId" element={<SubcategoryList />} />
-            <Route
-              path="/products/:categoryId/:filterId"
-              element={<ProductList />}
-            />
-            <Route path="/products/:categoryId" element={<ProductList />} />
-          </Routes>
-        </Container>
+        {Store.isLoaded && (
+          <Container>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route
+                path="/category/:categoryId"
+                element={<SubcategoryList />}
+              />
+              <Route
+                path="/products/:categoryId/:filterId"
+                element={<ProductList />}
+              />
+              <Route path="/products/:categoryId" element={<ProductList />} />
+            </Routes>
+          </Container>
+        )}
       </Context.Provider>
     </div>
   );

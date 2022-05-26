@@ -26,7 +26,6 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = observer(({ onOrder }) => {
   const items = CartStore.items;
-  // if (items.length)
   return (
     <div>
       {items.length > 0 && (
